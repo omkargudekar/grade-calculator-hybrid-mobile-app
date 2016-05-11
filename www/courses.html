@@ -17,6 +17,7 @@
         });
     </script>
     <script src="http://www.getmyshop.org/jquery-mobile/jquery.mobile-1.4.5.min.js"></script>
+    <script type='text/javascript' src='js/app.js'></script>
 
 
 </head>
@@ -27,7 +28,7 @@
         <div data-role="header">
             <h3>Menu</h3>
         </div>
-        <div data-role="controlgroup" data-corners="false" >
+        <div data-role="controlgroup" data-corners="false">
 
 
             <a href="#" data-role="button" class="left"><i class="fa fa-home" aria-hidden="true"></i>
@@ -53,36 +54,34 @@
     </div>
 
 
-
     <div role="main" class="ui-content ">
-        <ul data-role="listview" data-autodividers="false" data-filter="true" data-inset="true">
-            <li><a href="gotoCourseHome()"><span class="course-number">CMPE 272</span> Enterprise Software Overview</a></li>
-            <li><a href="gotoCourseHome()"><span class="course-number">CMPE 202</span> Software Systems Engineering </a></li>
-            <li><a href="gotoCourseHome()"><span class="course-number">CMPE 295A</span> Master's Project I </a></li>
-            <li><a href="gotoCourseHome()"><span class="course-number">CMPE 295B</span> Master's Project II </a></li>
-            <li><a href="gotoCourseHome()"><span class="course-number">CMPE 294</span> Computer Engineering Seminar </a></li>
+        <ul data-role="listview" data-autodividers="false" data-filter="true" data-inset="true" id="courseList">
+
+
+
+
 
         </ul>
     </div>
 
-    <div data-role="footer" data-position="fixed" >
+    <div data-role="footer" data-position="fixed">
 
         <div data-role="navbar">
             <ul>
                 <li>
 
-                    <a href="#newCourseAdd" data-rel="popup" data-transition="pop" data-position-to="window" >
+                    <a href="#newCourseAdd" data-rel="popup" data-transition="pop" data-position-to="window">
                         <i class="fa fa-plus-circle" aria-hidden="true"></i>
                         Add Course
                     </a>
-                </li>
+
+
             </ul>
         </div>
     </div>
 
 
     <section>
-
 
 
         <div data-role="popup" id="newCourseAdd" class="fullscreen-popup" data-dismissible="true" data-overlay-theme="b" style="max-width:100%">
@@ -96,18 +95,18 @@
             <div role="main" class="ui-content">
 
 
-                        <div class="ui-field-contain bottom-padding">
-                            <label for="newCourseNumber">Course Number</label>
-                            <input type="text" name id="newCourseNumber">
-                        </div>
-                        <div class="ui-field-contain bottom-padding">
-                            <label for="newCourseTitle">Course Title</label>
-                            <input type="text" name id="newCourseTitle">
-                        </div>
-                        <div class="ui-field-contain bottom-padding">
-                            <label for="newInstructor">Instructor</label>
-                            <input type="text" name id="newInstructor">
-                        </div>
+                <div class="ui-field-contain bottom-padding">
+                    <label for="newCourseNumber">Course Number</label>
+                    <input type="text" name id="newCourseNumber">
+                </div>
+                <div class="ui-field-contain bottom-padding">
+                    <label for="newCourseTitle">Course Title</label>
+                    <input type="text" name id="newCourseTitle">
+                </div>
+                <div class="ui-field-contain bottom-padding">
+                    <label for="newInstructor">Instructor</label>
+                    <input type="text" name id="newInstructor">
+                </div>
 
             </div>
 
@@ -125,13 +124,15 @@
         </div>
 
 
-
     </section>
 
 </div>
 
-
+<script>
+    GRADE_CALC.getCourses();
+</script>
 
 </body>
+
 
 </html>
