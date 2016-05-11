@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Course Settings</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://www.getmyshop.org/jquery-mobile/jquery.mobile-1.4.5.min.css"/>
+    <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.2/css/font-awesome.min.css">
+
+    <script src="http://www.getmyshop.org/jquery-mobile/jquery.js"></script>
+    <script>
+        $(document).bind('mobileinit', function () {
+            $.mobile.changePage.defaults.changeHash = false;
+            $.mobile.hashListeningEnabled = false;
+            $.mobile.pushStateEnabled = false;
+        });
+    </script>
+    <script src="http://www.getmyshop.org/jquery-mobile/jquery.mobile-1.4.5.min.js"></script>
+    <script type="text/javascript" src="js/jquery.mousewheel.min.js"></script>
+    <script type="text/javascript" src="js/jqm-spinbox.js"></script>
+    <script type="text/javascript" src="js/tinymce.min.js"></script>
+    <script>tinymce.init({ selector:'textarea',
+        height : window.innerHeight -400
+    });</script>
+
+</head>
+<body>
+<div id="home" data-role="page">
+
+    <div data-role="panel" id="navpanel">
+        <div data-role="header">
+            <h3>Menu</h3>
+        </div>
+        <div data-role="controlgroup" data-corners="false" >
+
+
+            <a href="#" data-role="button" class="left"><i class="fa fa-home" aria-hidden="true"></i>
+                 Home</a>
+            <a href="#" data-role="button" class="left"><i class="fa fa-book" aria-hidden="true"></i>
+                Courses</a>
+            <a href="#" data-role="button" class="left"><i class="fa fa-graduation-cap" aria-hidden="true"></i>
+                Students</a>
+            <a href="#" data-role="button" class="left"><i class="fa fa-line-chart" aria-hidden="true"></i>
+                Performance</a>
+            <a href="#" data-role="button" class="left"><i class="fa fa-check-circle-o" aria-hidden="true"></i>
+                Grade</a>
+            <a href="#" data-role="button" class="left"><i class="fa fa-sign-out" aria-hidden="true"></i>Logout</a>
+
+        </div>
+    </div>
+
+    <div data-role="header" data-position="fixed">
+        <a id="bars-button" href="#navpanel"><i class="fa fa-bars" aria-hidden="true"></i>
+        </a>
+        <h3>Course Setting</h3>
+
+    </div>
+    <div role="main" class="ui-content ">
+
+        <div class="left">
+                <div class="course-details"><span id="courseNumber">CMPE 235 : </span><span id="courseTitle">Mobile Systems</span></div>
+        </div>
+        <div >
+            <h4>Coursework</a></h4>
+
+        </div>
+
+        <table data-role="table" data-mode="columntoggle" class="ui-responsive ui-shadow gk-decorate table-stripe table-stroke grade-table" is="jqm-table">
+            <thead>
+            <tr>
+                <th>Tasks</th>
+                <th>
+                    Points
+                    <a href="#courseworkPointsEdit" data-rel="popup" data-transition="pop" data-position-to="window" class="btn">
+                        <i class="fa fa-wrench"></i>
+                    </a>
+
+                </th>
+                <th>
+                    Ratio
+                    <a href="#courseworkRatioEdit" data-rel="popup" class="btn" data-transition="pop" data-position-to="window"> <i class="fa fa-wrench"></i>
+                    </a>
+                </th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>Homework</td>
+                <td>500</td>
+                <td>10%</td>
+
+            </tr>
+            <tr>
+                <td>Labs</td>
+                <td>500</td>
+                <td>10%</td>
+            </tr>
+            <tr>
+                <td>Project</td>
+                <td>500</td>
+                <td>10%</td>
+
+            </tr>
+            <tr>
+                <td>Presentation</td>
+                <td>500</td>
+                <td>10%</td>
+
+            </tr>
+            <tr>
+                <td>Midterm</td>
+                <td>500</td>
+                <td>10%</td>
+
+            </tr>
+            <tr>
+                <td>Final</td>
+                <td>500</td>
+                <td>10%</td>
+
+            </tr>
+            <tr>
+                <th>Total</th>
+                <th>500</th>
+                <th>10%</th>
+
+            </tr>
+            </tbody>
+        </table>
+
+        <br>
+
+        <div class="right editbar">
+
+
+
+        </div>
+        <table data-role="table" data-mode="columntoggle" class="ui-responsive ui-shadow gk-decorate table-stripe table-stroke grade-table" is="jqm-table">
+            <thead>
+            <tr>
+                <th>Grade</th>
+                <th>Range
+                    <a href="#courseworkGradeEdit" data-rel="popup" class="btn" data-transition="pop" data-position-to="window"> <i class="fa fa-wrench"></i>
+                    </a>
+
+                </th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>A</td>
+                <td>95-100%</td>
+
+            </tr>
+            <tr>
+                <td>B</td>
+                <td>90-95%</td>
+
+            </tr>
+            <tr>
+                <td>C</td>
+                <td>90-95%</td>
+
+            </tr>
+            <tr>
+                <td>D</td>
+                <td>90-95%</td>
+
+            </tr>
+
+            <tr>
+                <td>F</td>
+                <td>90-95%</td>
+            </tr>
+            </tbody>
+        </table>
+        <div>
+            <div>
+                <h3>Course Description      <a href="#courseworkDescriptionEdit" data-rel="popup" class="btn" data-transition="pop" data-position-to="window"> <i class="fa fa-pencil"></i>
+                </a></h3>
+
+            </div>
+            <div>
+                This is a desritpion
+            </div>
+        </div>
+
+    </div>
+
+
+
+    <section>
+
+
+
+        <div data-role="popup" id="courseworkDescriptionEdit" class="fullscreen-popup" data-dismissible="true" data-overlay-theme="b" style="max-width:100%">
+            <a href="#" data-rel="back" data-role="button" data-theme="b" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
+
+            <div data-role="header" data-theme="a">
+                <h1>Description</h1>
+
+            </div>
+
+            <div role="main" class="ui-content ">
+
+
+                    <div class="ui-field-contain bottom-padding">
+                        <textarea id="newDescription" rows="500" style="height: 100%">Smaple Course Description</textarea>
+                    </div>
+
+
+            </div>
+
+            <div data-role="footer">
+
+                <div data-role="navbar">
+                    <ul>
+                        <li>
+                            <a> <i class="fa fa-floppy-o" aria-hidden="true" data-rel="back" data-transition="flow"></i>
+                                Save</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+
+
+
+        <div data-role="popup" id="courseworkRatioEdit" class="fullscreen-popup" data-dismissible="true" data-overlay-theme="b" style="max-width:100%">
+            <a href="#" data-rel="back" data-role="button" data-theme="b" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
+
+            <div data-role="header" data-theme="a">
+                <h1>Ratio</h1>
+
+            </div>
+            <div role="main" class="ui-content ">
+                <div class="ui-field-contain no-padding">
+                    Homework
+                    <input id="homework_scale" value="50" min="0" max="100" type="range" data-mini="false" data-highlight="true">
+                </div>
+                <div class="ui-field-contain no-padding">
+                    Labs
+                    <input id="labs_scale" value="50" min="0" max="100" type="range" data-mini="false" data-highlight="true">
+                </div>
+                <div class="ui-field-contain no-padding">
+                    Projects
+                    <input id="projects_scale" value="50" min="0" max="100" type="range" data-mini="false" data-highlight="true">
+                </div>
+                <div class="ui-field-contain no-padding">
+                    Presentation
+                    <input id="presentation_scale" value="50" min="0" max="100" type="range" data-mini="false" data-highlight="true">
+                </div>
+                <div class="ui-field-contain no-padding">
+                    Mid Term
+                    <input id="midterm_scale" value="50" min="0" max="100" type="range" data-mini="false" data-highlight="true">
+                </div>
+                <div class="ui-field-contain no-padding">
+                    Finals
+                    <input id="final_scale" value="50" min="0" max="100" type="range" data-mini="false" data-highlight="true">
+                </div>
+            </div>
+
+            <div data-role="footer">
+
+                <div data-role="navbar">
+                    <ul>
+                        <li>
+                            <a> <i class="fa fa-floppy-o" aria-hidden="true" data-rel="back" data-transition="flow"></i>
+                                Save</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+
+
+
+
+        <div data-role="popup" id="courseworkGradeEdit" class="fullscreen-popup" data-dismissible="true" data-overlay-theme="b" style="max-width:100%">
+            <a href="#" data-rel="back" data-role="button" data-theme="b" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
+
+            <div data-role="header" data-theme="a">
+                <h1>Grade</h1>
+
+            </div>
+            <div role="main" class="ui-content ">
+                <div class="ui-field-contain ">
+                    <div data-role="rangeslider" data-mini="true">
+                        <label for="a-rangea">A Grade</label>
+                        <input name="a-rangea" id="a-rangea" min="0" max="100" value="0" type="range" />
+                        <label for="a-rangeb">A Grade</label>
+                        <input name="a-rangeb" id="a-rangeb" min="0" max="100" value="100" type="range" />
+                    </div>
+                </div>
+                <div class="ui-field-contain ">
+                    <div data-role="rangeslider" data-mini="true">
+                        <label for="b-rangea">B Grade</label>
+                        <input name="b-rangea" id="b-rangea" min="0" max="100" value="0" type="range" />
+                        <label for="b-rangeb">B Grade</label>
+                        <input name="b-rangeb" id="b-rangeb" min="0" max="100" value="100" type="range" />
+                    </div>
+                </div>
+                <div class="ui-field-contain ">
+                    <div data-role="rangeslider" data-mini="true">
+                        <label for="c-rangea">C Grade</label>
+                        <input name="c-rangea" id="c-rangea" min="0" max="100" value="0" type="range" />
+                        <label for="c-rangeb">C Grade</label>
+                        <input name="c-rangeb" id="c-rangeb" min="0" max="100" value="100" type="range" />
+                    </div>
+                </div>
+                <div class="ui-field-contain ">
+                    <div data-role="rangeslider" data-mini="true">
+                        <label for="d-rangea">D Grade</label>
+                        <input name="d-rangea" id="d-rangea" min="0" max="100" value="0" type="range" />
+                        <label for="d-rangeb">D Grade</label>
+                        <input name="d-rangeb" id="d-rangeb" min="0" max="100" value="100" type="range" />
+                    </div>
+                </div>
+
+                <div class="ui-field-contain ">
+                    <div data-role="rangeslider" data-mini="true">
+                        <label for="f-rangea">F Grade</label>
+                        <input name="f-rangea" id="f-rangea" min="0" max="100" value="0" type="range" />
+                        <label for="f-rangeb">F Grade</label>
+                        <input name="f-rangeb" id="f-rangeb" min="0" max="100" value="100" type="range" />
+                    </div>
+                </div>
+            </div>
+
+            <div data-role="footer">
+
+                <div data-role="navbar">
+                    <ul>
+                        <li>
+                            <a> <i class="fa fa-floppy-o" aria-hidden="true" data-rel="back" data-transition="flow"></i>
+                                Save</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+
+
+        <div data-role="popup" id="courseworkPointsEdit" class="fullscreen-popup" data-dismissible="true" data-overlay-theme="b" style="max-width:100%">
+            <a href="#" data-rel="back" data-role="button" data-theme="b" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
+
+            <div data-role="header" data-theme="a">
+                <h1>Points</h1>
+
+            </div>
+            <div role="main" class="ui-content center ">
+                <div class="ui-field-contain bottom-padding">
+                    Homework
+                    <input type="text" data-mini="true"  data-role="spinbox" name="spin" id="homwork_points" value="60" min="0" max="100" />
+                </div>
+                <div class="ui-field-contain bottom-padding">
+                    Labs
+                    <input type="text"  data-mini="true" data-role="spinbox" name="spin" id="labs_points" value="60" min="0" max="100" />
+                </div>
+                <div class="ui-field-contain bottom-padding">
+                    Projects
+                    <input type="text" data-mini="true"  data-role="spinbox" name="spin" id="project_points" value="60" min="0" max="100" />
+                </div>
+                <div class="ui-field-contain bottom-padding">
+                    Presentation
+                    <input type="text" data-mini="true"  data-role="spinbox" name="spin" id="presentation_points" value="60" min="0" max="100" />
+                </div>
+                <div class="ui-field-contain bottom-padding">
+                    Mid Term
+                    <input type="text" data-mini="true"  data-role="spinbox" name="spin" id="midterm_points" value="60" min="0" max="100" />
+                </div>
+                <div class="ui-field-contain bottom-padding">
+                    Finals
+                    <input type="text" data-mini="true" data-role="spinbox" name="spin" id="finals-points" value="60" min="0" max="100" />
+                </div>
+            </div>
+
+            <div data-role="footer">
+
+                <div data-role="navbar">
+                    <ul>
+                        <li>
+                            <a> <i class="fa fa-floppy-o" aria-hidden="true" data-rel="back" data-transition="flow"></i>
+                                Save</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+</div>
+
+
+</body>
+
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Courses</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://www.getmyshop.org/jquery-mobile/jquery.mobile-1.4.5.min.css"/>
+    <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.2/css/font-awesome.min.css">
+
+    <script src="http://www.getmyshop.org/jquery-mobile/jquery.js"></script>
+    <script>
+        $(document).bind('mobileinit', function () {
+            $.mobile.changePage.defaults.changeHash = false;
+            $.mobile.hashListeningEnabled = false;
+            $.mobile.pushStateEnabled = false;
+        });
+    </script>
+    <script src="http://www.getmyshop.org/jquery-mobile/jquery.mobile-1.4.5.min.js"></script>
+
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+
+</head>
+<body>
+<div id="home" data-role="page">
+    <div data-role="header" data-position="fixed">
+
+        <h3><i class="fa fa-line-chart" aria-hidden="true"></i>
+             Grader</h3>
+    </div>
+    <div role="main" class="ui-content loginPanel">
+        <div>
+            <label for="username"><i class="fa fa-envelope-o" aria-hidden="true"  ></i> Username</label>
+            <input type="email" name id="username"  placeholder="user@mail.com">
+        </div>
+        <div>
+            <label for="password"><i class="fa fa-lock" aria-hidden="true"  ></i> Password</label>
+            <input type="password" name id="password" placeholder="password">
+        </div>
+        <a class="ui-btn">Login</a>
+    </div>
+</div>
+
+
+</body>
+
+
+</html>
