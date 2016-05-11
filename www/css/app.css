@@ -3,12 +3,12 @@
 }
 
 .btn {
-
-    border: 1px solid #F47410;
+    background-color: #8EC112;
+    border: 1px solid #8EC112;
     -webkit-border-radius: 6;
     -moz-border-radius: 6;
     border-radius: 6px;
-    color: #F47410 !important;
+    color: #fff !important;
     font-size: 14px!important;
     padding: 3px 4px 3px 4px;
     text-decoration: none!important;
