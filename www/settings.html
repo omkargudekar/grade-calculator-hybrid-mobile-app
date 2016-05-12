@@ -21,7 +21,10 @@
     <script type="text/javascript" src="js/tinymce.min.js"></script>
     <script>tinymce.init({ selector:'textarea',
         height : window.innerHeight -400
-    });</script>
+    });
+    </script>
+    <script type="text/javascript" src="js/app.js"></script>
+
 
 </head>
 <body>
@@ -58,10 +61,10 @@
     <div role="main" class="ui-content ">
 
         <div class="left">
-                <div class="course-details"><span id="courseNumber">CMPE 235 : </span><span id="courseTitle">Mobile Systems</span></div>
+                <div class="course-details"><span id="courseNumber"></span> : <span id="courseTitle"></span></div>
         </div>
         <div >
-            <h4>Coursework</a></h4>
+            <h4>Coursework</h4>
 
         </div>
 
@@ -86,50 +89,45 @@
             <tbody>
             <tr>
                 <td>Homework</td>
-                <td>500</td>
-                <td>10%</td>
+                <td id="homeworkPoint"></td>
+                <td id="homeworkPercent"></td>
 
             </tr>
             <tr>
                 <td>Labs</td>
-                <td>500</td>
-                <td>10%</td>
+                <td id="labsPoint"></td>
+                <td id="labsPercent"></td>
+
             </tr>
             <tr>
                 <td>Project</td>
-                <td>500</td>
-                <td>10%</td>
+                <td id="projectPoint"></td>
+                <td id="projectPercent"></td>
 
             </tr>
             <tr>
                 <td>Presentation</td>
-                <td>500</td>
-                <td>10%</td>
-
+                <td id="presentationPoint"></td>
+                <td id="presentationPercent"></td>
             </tr>
             <tr>
                 <td>Midterm</td>
-                <td>500</td>
-                <td>10%</td>
+                <td id="midtermPoint"></td>
+                <td id="midtermPercent"></td>
 
             </tr>
             <tr>
                 <td>Final</td>
-                <td>500</td>
-                <td>10%</td>
+                <td id="finalPoint"></td>
+                <td id="finalPercent"></td>
 
             </tr>
-            <tr>
-                <th>Total</th>
-                <th>500</th>
-                <th>10%</th>
 
-            </tr>
             </tbody>
         </table>
 
 
-
+        <br>
         <table data-role="table" data-mode="columntoggle" class="ui-responsive ui-shadow gk-decorate table-stripe table-stroke grade-table" is="jqm-table">
             <thead>
             <tr>
@@ -144,28 +142,28 @@
             <tbody>
             <tr>
                 <td>A</td>
-                <td>95-100%</td>
+                <td id="aGrade"></td>
 
             </tr>
             <tr>
                 <td>B</td>
-                <td>90-95%</td>
+                <td id="bGrade"></td>
 
             </tr>
             <tr>
                 <td>C</td>
-                <td>90-95%</td>
+                <td id="cGrade"></td>
 
             </tr>
             <tr>
                 <td>D</td>
-                <td>90-95%</td>
+                <td id="dGrade"></td>
 
             </tr>
 
             <tr>
                 <td>F</td>
-                <td>90-95%</td>
+                <td id="fGrade"></td>
             </tr>
             </tbody>
         </table>
@@ -175,8 +173,8 @@
                 </a></h3>
 
             </div>
-            <div>
-                This is a desritpion
+            <div id="description">
+
             </div>
         </div>
 
@@ -200,7 +198,7 @@
 
 
                     <div class="ui-field-contain bottom-padding">
-                        <textarea id="newDescription" rows="500" style="height: 100%">Smaple Course Description</textarea>
+                        <textarea id="newDescription" rows="500" style="height: 100%"></textarea>
                     </div>
 
 
@@ -240,7 +238,7 @@
                 </div>
                 <div class="ui-field-contain no-padding">
                     Projects
-                    <input id="projects_scale" value="50" min="0" max="100" type="range" data-mini="false" data-highlight="true">
+                    <input id="project_scale" value="50" min="0" max="100" type="range" data-mini="false" data-highlight="true">
                 </div>
                 <div class="ui-field-contain no-padding">
                     Presentation
@@ -349,7 +347,7 @@
             <div role="main" class="ui-content center ">
                 <div class="ui-field-contain bottom-padding">
                     Homework
-                    <input type="text" data-mini="true"  data-role="spinbox" name="spin" id="homwork_points" value="60" min="0" max="100" />
+                    <input type="text" data-mini="true"  data-role="spinbox" name="spin" id="homework_points" value="60" min="0" max="100" />
                 </div>
                 <div class="ui-field-contain bottom-padding">
                     Labs
@@ -369,7 +367,7 @@
                 </div>
                 <div class="ui-field-contain bottom-padding">
                     Finals
-                    <input type="text" data-mini="true" data-role="spinbox" name="spin" id="finals-points" value="60" min="0" max="100" />
+                    <input type="text" data-mini="true" data-role="spinbox" name="spin" id="final_points" value="60" min="0" max="100" />
                 </div>
             </div>
 
@@ -389,8 +387,9 @@
 
     </section>
 </div>
-
-
+<script>
+    GRADE_CALC.getCourseSetting();
+</script>
 </body>
 
 </html>
