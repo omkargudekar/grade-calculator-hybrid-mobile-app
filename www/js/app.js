@@ -34,6 +34,31 @@ var GRADE_CALC = function () {
             });
 
         },
+        getCourseDropDownList: function () {
+
+            $.ajax({
+                url: mainSiteURL + "courses",
+                type: 'get',
+                success: function (data) {
+                    data = JSON.parse(data).courses;
+
+                    for (var counter = 0; counter < data.length; counter++) {
+                        try {
+
+                            $("#courses").append('<option value= ' + data[counter].course_id + '>' +
+                                data[counter].course_number + data[counter].course_title + ' | ' + data[counter].course_title +
+                                '</option>');
+                            GRADE_CALC.generatePerformanceChart();
+
+                        }
+                        catch (err) {
+                            console.log(err);
+                        }
+                    }
+                    $('#courses').selectmenu('refresh');
+                }
+            });
+        },
         getCourses: function () {
 
             $.ajax({
@@ -56,10 +81,35 @@ var GRADE_CALC = function () {
                             console.log(err);
                         }
                     }
-                    ;
+
                     $('#courseList').listview('refresh');
                 }
             });
+        },
+        addNewCourse: function () {
+
+            var data = {}
+            data.course_number = $('#newCourseNumber').val();
+            data.course_title = $('#newCourseTitle').val();
+            data.course_instructor = $('#newInstructor').val();
+
+
+            $.ajax({
+                url: mainSiteURL + "course",
+                type: 'post',
+                dataType: "json",
+                data: JSON.stringify(data),
+                success: function (data) {
+
+                    alert('New course added');
+                    GRADE_CALC.goCourseHome(data.id);
+                },
+                error: function () {
+                    alert('Failed to add new course.');
+                }
+            });
+
+
         },
         goCourseHome: function (id) {
             sessionStorage.setItem('courseId', id);
@@ -161,8 +211,6 @@ var GRADE_CALC = function () {
             grade.F.max = $('#f-rangeb').val();
 
 
-
-
             //updated coursework
 
             coursework.homework.points = $('#homework_points').val();
@@ -198,7 +246,7 @@ var GRADE_CALC = function () {
             data.course_description = tinyMCE.activeEditor.getContent();
             //NOTE SLIM FRAMEWORK ISSUE : PUT DOESNT WORK , THORUGH POSTMAN WORKS
             $.ajax({
-                url: mainSiteURL + "course/"+sessionStorage.getItem('courseId'),
+                url: mainSiteURL + "course/" + sessionStorage.getItem('courseId'),
                 type: 'post',
                 dataType: "json",
                 data: JSON.stringify(data),
@@ -208,13 +256,100 @@ var GRADE_CALC = function () {
                     GRADE_CALC.getCourseSetting();
 
                 },
-                error:function(){
+                error: function () {
                     alert('Failed to update course setting.');
                 }
             });
 
-        }
+        },
+        getStudents: function () {
 
+
+            $.ajax({
+                url: mainSiteURL + "students",
+                type: 'get',
+                success: function (data) {
+                    data = JSON.parse(data).students;
+
+                    for (var counter = 0; counter < data.length; counter++) {
+                        try {
+                            $("#studentList").append('' +
+                                ' <li>' +
+                                '<a> ' +
+                                '<img src="' + data[counter].student_image + '"> ' +
+                                '<h2>' +
+                                '<i class="fa fa-user" aria-hidden="true"></i> ' + data[counter].student_fname + ',' + data[counter].student_lname + ' </h2>' +
+                                ' <p>' + data[counter].student_id + ' | ' +
+                                '<i class="fa fa-phone" aria-hidden="true"></i>  ' + data[counter].student_contact +
+                                ' </p><p><i class="fa fa-envelope-o" aria-hidden="true"></i> ' + data[counter].student_email +
+                                '</p></a> </li>');
+                        }
+                        catch (err) {
+                            console.log(err);
+                        }
+                    }
+
+                    $('#studentList').listview('refresh');
+                }
+            });
+
+        },
+        generatePerformanceChart: function () {
+
+
+            var id =$('#courses option:selected').val()
+            $.ajax({
+                url: mainSiteURL + "performance/" + id,
+                type: 'get',
+                success: function (data) {
+                    data = JSON.parse(data)[0];
+
+                    console.log(data);
+                    var ajaxData = [
+                        ['A', parseInt(data.A)],
+                        ['B', parseInt(data.B)],
+                        ['C', parseInt(data.C)],
+                        ['D', parseInt(data.D)],
+                        ['F', parseInt(data.F)]
+
+                    ];
+                    console.log(ajaxData);
+                    $('#chart').highcharts({
+                        chart: {
+                            type: 'pie',
+                            options3d: {
+                                enabled: true,
+                                alpha: 45,
+                                beta: 0
+                            },
+                            backgroundColor: 'transparent',
+                        },
+                        title: {
+                            text: ''
+                        },
+                        tooltip: {
+                            pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+                        },
+                        plotOptions: {
+                            pie: {
+                                allowPointSelect: true,
+                                cursor: 'pointer',
+                                depth: 25,
+                                dataLabels: {
+                                    enabled: true,
+                                    format: '{point.name} [ {point.percentage:.1f}% ]'
+                                }
+                            }
+                        },
+                        series: [{
+                            type: 'pie',
+                            name: 'Grade Distribution',
+                            data: ajaxData
+                        }]
+                    });
+                }
+            });
+        }
 
     }
 

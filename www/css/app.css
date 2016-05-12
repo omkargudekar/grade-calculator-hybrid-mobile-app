@@ -16,7 +16,9 @@
     text-shadow:none!important;
     margin-left: 4px;
 }
-
+#chart{
+    width:calc(100vw - 30px);
+}
 .loginPanel{
         margin-top:10%;
 }
