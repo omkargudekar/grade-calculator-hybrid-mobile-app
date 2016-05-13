@@ -10,7 +10,40 @@ var mainSiteURL = "http://localhost:8080/";
 var GRADE_CALC = function () {
 
     return {
+        gradeCalcFun:function(){
 
+            var coursework = JSON.parse(sessionStorage.getItem('coursework'));
+            var grade = JSON.parse(sessionStorage.getItem('grade'));
+            var obtainedGrade;
+
+            var totalPer= (((($('#homework').val() / coursework.homework.points))* coursework.homework.percent)) +
+                (((($('#labs').val() / coursework.labs.points))* coursework.labs.percent)) +
+                (((($('#presentation').val() / coursework.presentation.points))* coursework.presentation.percent)) +
+                (((($('#project').val() / coursework.project.points))* coursework.project.percent)) +
+                (((($('#midterm').val() / coursework.midterm.points))* coursework.midterm.percent)) +
+                (((($('#final').val() / coursework.final.points))* coursework.final.percent));
+
+
+
+
+            if(totalPer >= grade.A.min){
+                obtainedGrade="A";
+            }
+            else if(totalPer>=grade.B.min){
+                obtainedGrade="B";
+            }
+            else if(totalPer>=grade.C.min){
+                obtainedGrade="C";
+            }
+            else if(totalPer>=grade.D.min){
+                obtainedGrade="D";
+            }
+            else{
+                obtainedGrade="F";
+            }
+
+            alert('Grade = '+obtainedGrade);
+        },
         login: function () {
 
             var loginRequest = {};
@@ -46,7 +79,7 @@ var GRADE_CALC = function () {
                         try {
 
                             $("#courses").append('<option value= ' + data[counter].course_id + '>' +
-                                data[counter].course_number + data[counter].course_title + ' | ' + data[counter].course_title +
+                                data[counter].course_number + ' ' + data[counter].course_title + ' | ' + data[counter].course_instructor +
                                 '</option>');
                             GRADE_CALC.generatePerformanceChart();
 
@@ -56,6 +89,37 @@ var GRADE_CALC = function () {
                         }
                     }
                     $('#courses').selectmenu('refresh');
+                }
+            });
+        },
+        getGradeSettings:function(){
+
+
+            $.ajax({
+                url: mainSiteURL + "course/" + sessionStorage.getItem('courseId'),
+                type: 'get',
+                success: function (data) {
+                    data = JSON.parse(data);
+                    console.log(data);
+                    var coursework = JSON.parse(data.coursework).coursework;
+                    var grade = JSON.parse(data.coursework).grade;
+
+                    sessionStorage.setItem('coursework', JSON.stringify(coursework));
+                    sessionStorage.setItem('grade', JSON.stringify(grade));
+
+                    $('#homework_points').html(coursework.homework.points);
+
+                    $('#labs_points').html(coursework.labs.points);
+
+
+                    $('#project_points').html(coursework.project.points);
+
+                    $('#presentation_points').html(coursework.presentation.points);
+
+                    $('#midterm_points').html(coursework.midterm.points);
+
+                    $('#final_points').html(coursework.final.points);
+
                 }
             });
         },
@@ -72,6 +136,33 @@ var GRADE_CALC = function () {
 
                             $("#courseList").append('<li> ' +
                                 '<a href="#" onclick="GRADE_CALC.goCourseHome(' + data[counter].course_id + ')">' +
+                                '<span class="course-number">' + data[counter].course_number +
+                                '</span>' + data[counter].course_title +
+                                '</a>' +
+                                '</li>');
+                        }
+                        catch (err) {
+                            console.log(err);
+                        }
+                    }
+
+                    $('#courseList').listview('refresh');
+                }
+            });
+        },
+        getCoursesForGrade: function () {
+
+            $.ajax({
+                url: mainSiteURL + "courses",
+                type: 'get',
+                success: function (data) {
+                    data = JSON.parse(data).courses;
+
+                    for (var counter = 0; counter < data.length; counter++) {
+                        try {
+
+                            $("#courseList").append('<li> ' +
+                                '<a href="#" onclick="GRADE_CALC.goCourseGradeHome(' + data[counter].course_id + ')">' +
                                 '<span class="course-number">' + data[counter].course_number +
                                 '</span>' + data[counter].course_title +
                                 '</a>' +
@@ -110,6 +201,10 @@ var GRADE_CALC = function () {
             });
 
 
+        },
+        goCourseGradeHome: function (id) {
+            sessionStorage.setItem('courseId', id);
+            window.location = 'grade.html';
         },
         goCourseHome: function (id) {
             sessionStorage.setItem('courseId', id);
@@ -297,7 +392,7 @@ var GRADE_CALC = function () {
         generatePerformanceChart: function () {
 
 
-            var id =$('#courses option:selected').val()
+            var id = $('#courses option:selected').val()
             $.ajax({
                 url: mainSiteURL + "performance/" + id,
                 type: 'get',

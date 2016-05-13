@@ -17,7 +17,7 @@
     </script>
     <script src="http://www.getmyshop.org/jquery-mobile/jquery.mobile-1.4.5.min.js"></script>
 
-    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="js/app.js"></script>
 
 </head>
 <body>
@@ -55,53 +55,51 @@
     </div>
 
     <div role="main" class="ui-content">
-        <div class="ui-field-contain">
-            <label for="course">Course</label>
-            <input type="search" name id="course">
-        </div>
+
         <div class="ui-field-contain">
             <label for="student">Student</label>
-            <input type="search" name id="student">
+            <select id="student">
+            </select>
         </div>
         <div class="ui-grid-a" style="height:95px">
             <div class="ui-block-a" style="height:100%">
                 <div class="ui-field-contain">
-                    <label for="homework">Homework</label>
-                    <input type="number" name id="homework">
+                    <label for="homework">Homework (<span id="homework_points"></span>)</label>
+                    <input type="number" name id="homework" value="0">
                 </div>
             </div>
             <div class="ui-block-b" style="height:100%">
                 <div class="ui-field-contain">
-                    <label for="labs">Labs</label>
-                    <input type="number" name id="labs">
+                    <label for="labs">Labs (<span id="labs_points"></span>)</label>
+                    <input type="number" name id="labs" value="0">
                 </div>
             </div>
         </div>
         <div class="ui-grid-a" style="height:95px">
             <div class="ui-block-a" style="height:100%">
                 <div class="ui-field-contain">
-                    <label for="presentation">Presentation</label>
-                    <input type="number" name id="presentation">
+                    <label for="presentation">Presentation (<span id="presentation_points"></span>)</label>
+                    <input type="number" name id="presentation" value="0">
                 </div>
             </div>
             <div class="ui-block-b" style="height:100%">
                 <div class="ui-field-contain">
-                    <label for="project">Project</label>
-                    <input type="number" name id="project">
+                    <label for="project">Project (<span id="project_points"></span>)</label>
+                    <input type="number" name id="project" value="0">
                 </div>
             </div>
         </div>
         <div class="ui-grid-a" style="height:95px;">
             <div class="ui-block-a" style="height:100%">
                 <div class="ui-field-contain">
-                    <label for="midterm">Midterm</label>
-                    <input type="number" name id="midterm">
+                    <label for="midterm">Midterm (<span id="midterm_points"></span>)</label>
+                    <input type="number" name id="midterm" value="0">
                 </div>
             </div>
             <div class="ui-block-b" style="height:100%">
                 <div class="ui-field-contain">
-                    <label for="final">Final</label>
-                    <input type="number" name id="final">
+                    <label for="final">Final (<span id="final_points"></span>)</label>
+                    <input type="number" name id="final" value="0">
                 </div>
             </div>
         </div>
@@ -114,14 +112,7 @@
             <ul>
                 <li>
 
-                    <a href="#" data-rel="popup" data-transition="pop" data-position-to="window">
-                        <i class="fa fa-undo" aria-hidden="true"></i>
-                        Reset
-                    </a>
-                </li>
-                <li>
-
-                    <a href="#" data-rel="popup" data-transition="pop" data-position-to="window">
+                    <a href="#" onclick="GRADE_CALC.gradeCalcFun()" >
                         <i class="fa fa-calculator" aria-hidden="true"></i>
                         Calculate
                     </a>
@@ -132,7 +123,9 @@
 
 </div>
 
-
+<script>
+    GRADE_CALC.getGradeSettings();
+</script>
 </body>
 
 
