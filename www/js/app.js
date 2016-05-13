@@ -42,7 +42,22 @@ var GRADE_CALC = function () {
                 obtainedGrade="F";
             }
 
-            alert('Grade = '+obtainedGrade);
+
+            var data={};
+            data.course_id=sessionStorage.getItem('courseId');
+            data.grade=obtainedGrade;
+            data.student_id =$('#students option:selected').val();
+
+            $.ajax({
+                url: mainSiteURL + "performance",
+                type: 'post',
+                dataType: "json",
+                data: JSON.stringify(data),
+                success: function (data) {
+
+                    alert('Grade : '+obtainedGrade+'. Saved in database.')
+                }
+            });
         },
         login: function () {
 
@@ -92,6 +107,30 @@ var GRADE_CALC = function () {
                 }
             });
         },
+        getStudentDropDownList:function(){
+
+            $.ajax({
+                url: mainSiteURL + "students",
+                type: 'get',
+                success: function (data) {
+                    data = JSON.parse(data).students;
+
+                    for (var counter = 0; counter < data.length; counter++) {
+                        try {
+                            $("#students").append('<option value= ' + data[counter].student_id + '>' +
+                                data[counter].student_id + ' | ' + data[counter].student_fname + ' , ' + data[counter].student_lname +
+                                '</option>');
+                        }
+                        catch (err) {
+                            console.log(err);
+                        }
+                    }
+                    $('#students').selectmenu('refresh');
+
+
+                }
+            });
+        },
         getGradeSettings:function(){
 
 
@@ -111,7 +150,6 @@ var GRADE_CALC = function () {
 
                     $('#labs_points').html(coursework.labs.points);
 
-
                     $('#project_points').html(coursework.project.points);
 
                     $('#presentation_points').html(coursework.presentation.points);
@@ -119,6 +157,8 @@ var GRADE_CALC = function () {
                     $('#midterm_points').html(coursework.midterm.points);
 
                     $('#final_points').html(coursework.final.points);
+
+                    GRADE_CALC.getStudentDropDownList();
 
                 }
             });
@@ -392,7 +432,7 @@ var GRADE_CALC = function () {
         generatePerformanceChart: function () {
 
 
-            var id = $('#courses option:selected').val()
+            var id = $('#courses option:selected').val();
             $.ajax({
                 url: mainSiteURL + "performance/" + id,
                 type: 'get',
