@@ -2,9 +2,8 @@
  * Created by omkargudekar on 5/7/16.
  */
 
-var studentListURL = "http://localhost:8080/";
-var courseListURL = "http://localhost:8080/";
-var mainSiteURL = "http://localhost:8080/";
+var studentListURL = "http://getmyshop.org/grade/";
+var courseListURL = "http://publicvoid.net/grade/";
 
 
 var GRADE_CALC = function () {
@@ -49,7 +48,7 @@ var GRADE_CALC = function () {
             data.student_id =$('#students option:selected').val();
 
             $.ajax({
-                url: mainSiteURL + "performance",
+                url: courseListURL + "performance",
                 type: 'post',
                 dataType: "json",
                 data: JSON.stringify(data),
@@ -90,7 +89,7 @@ var GRADE_CALC = function () {
             loginRequest.password = $('#password').val();
 
             $.ajax({
-                url: mainSiteURL + "login",
+                url: courseListURL + "login",
                 type: 'post',
                 dataType: "json",
                 data: JSON.stringify(loginRequest),
@@ -109,7 +108,7 @@ var GRADE_CALC = function () {
         getCourseDropDownList: function () {
 
             $.ajax({
-                url: mainSiteURL + "courses",
+                url: courseListURL + "courses",
                 type: 'get',
                 success: function (data) {
                     data = JSON.parse(data).courses;
@@ -134,7 +133,7 @@ var GRADE_CALC = function () {
         getStudentDropDownList:function(){
 
             $.ajax({
-                url: mainSiteURL + "students",
+                url: studentListURL + "students",
                 type: 'get',
                 success: function (data) {
                     data = JSON.parse(data).students;
@@ -159,7 +158,7 @@ var GRADE_CALC = function () {
 
 
             $.ajax({
-                url: mainSiteURL + "course/" + sessionStorage.getItem('courseId'),
+                url: courseListURL + "course/" + sessionStorage.getItem('courseId'),
                 type: 'get',
                 success: function (data) {
                     data = JSON.parse(data);
@@ -190,7 +189,7 @@ var GRADE_CALC = function () {
         getCourses: function () {
 
             $.ajax({
-                url: mainSiteURL + "courses",
+                url: courseListURL + "courses",
                 type: 'get',
                 success: function (data) {
                     data = JSON.parse(data).courses;
@@ -217,7 +216,7 @@ var GRADE_CALC = function () {
         getCoursesForGrade: function () {
 
             $.ajax({
-                url: mainSiteURL + "courses",
+                url: courseListURL + "courses",
                 type: 'get',
                 success: function (data) {
                     data = JSON.parse(data).courses;
@@ -250,7 +249,7 @@ var GRADE_CALC = function () {
 
 
             $.ajax({
-                url: mainSiteURL + "course",
+                url: courseListURL + "course",
                 type: 'post',
                 dataType: "json",
                 data: JSON.stringify(data),
@@ -277,7 +276,7 @@ var GRADE_CALC = function () {
         getCourseSetting: function () {
             var courseId = sessionStorage.getItem('courseId');
             $.ajax({
-                url: mainSiteURL + "course/" + courseId,
+                url: courseListURL + "course/" + courseId,
                 type: 'get',
                 success: function (data) {
                     data = JSON.parse(data);
@@ -408,7 +407,7 @@ var GRADE_CALC = function () {
                 data.course_description = tinyMCE.activeEditor.getContent();
                 //NOTE SLIM FRAMEWORK ISSUE : PUT DOESNT WORK , THORUGH POSTMAN WORKS
                 $.ajax({
-                    url: mainSiteURL + "course/" + sessionStorage.getItem('courseId'),
+                    url: courseListURL + "course/" + sessionStorage.getItem('courseId'),
                     type: 'post',
                     dataType: "json",
                     data: JSON.stringify(data),
@@ -436,7 +435,7 @@ var GRADE_CALC = function () {
 
 
             $.ajax({
-                url: mainSiteURL + "students",
+                url: studentListURL + "students",
                 type: 'get',
                 success: function (data) {
                     data = JSON.parse(data).students;
@@ -469,7 +468,7 @@ var GRADE_CALC = function () {
 
             var id = $('#courses option:selected').val();
             $.ajax({
-                url: mainSiteURL + "performance/" + id,
+                url: courseListURL + "performance/" + id,
                 type: 'get',
                 success: function (data) {
                     data = JSON.parse(data)[0];
