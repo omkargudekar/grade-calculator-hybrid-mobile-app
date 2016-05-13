@@ -59,6 +59,30 @@ var GRADE_CALC = function () {
                 }
             });
         },
+        validateRange:function(){
+
+            var validate=false;
+            if($('#a-rangeb').val()<101 && $('#a-rangea').val() >= $('#b-rangeb').val() &&  $('#b-rangea').val() >=$('#c-rangeb').val() &&  $('#c-rangea').val()>=  $('#d-rangeb').val() && $('#d-rangea').val()>= $('#f-rangeb').val() )
+            {
+
+                if(( Number($('#homework_scale').val()) + Number($('#labs_scale').val())+Number($('#project_scale').val())+Number($('#presentation_scale').val())+Number($('#midterm_scale').val())+Number($('#final_scale').val()))==100){
+
+                    validate=true;
+                }
+                else {
+                    alert('Invalid coursework setting')
+
+                }
+
+            }
+            else{
+                alert('Invalid grade setting')
+            }
+
+
+            return validate;
+
+        },
         login: function () {
 
             var loginRequest = {};
@@ -328,73 +352,84 @@ var GRADE_CALC = function () {
         },
         saveSettings: function () {
 
-            tinyMCE.triggerSave();
-            var coursework = JSON.parse(sessionStorage.getItem('coursework'));
-            var grade = JSON.parse(sessionStorage.getItem('grade'));
 
-            //updated grade
+            if(GRADE_CALC.validateRange())
+            {
+                tinyMCE.triggerSave();
+                var coursework = JSON.parse(sessionStorage.getItem('coursework'));
+                var grade = JSON.parse(sessionStorage.getItem('grade'));
 
-            grade.A.min = $('#a-rangea').val();
-            grade.A.max = $('#a-rangeb').val();
-            grade.B.min = $('#b-rangea').val();
-            grade.B.max = $('#b-rangeb').val();
-            grade.C.min = $('#c-rangea').val();
-            grade.C.max = $('#c-rangeb').val();
-            grade.D.min = $('#d-rangea').val();
-            grade.D.max = $('#d-rangeb').val();
-            grade.F.min = $('#f-rangea').val();
-            grade.F.max = $('#f-rangeb').val();
+                //updated grade
+
+                grade.A.min = $('#a-rangea').val();
+                grade.A.max = $('#a-rangeb').val();
+                grade.B.min = $('#b-rangea').val();
+                grade.B.max = $('#b-rangeb').val();
+                grade.C.min = $('#c-rangea').val();
+                grade.C.max = $('#c-rangeb').val();
+                grade.D.min = $('#d-rangea').val();
+                grade.D.max = $('#d-rangeb').val();
+                grade.F.min = $('#f-rangea').val();
+                grade.F.max = $('#f-rangeb').val();
 
 
-            //updated coursework
+                //updated coursework
 
-            coursework.homework.points = $('#homework_points').val();
+                coursework.homework.points = $('#homework_points').val();
 
-            coursework.homework.percent = $('#homework_scale').val();
+                coursework.homework.percent = $('#homework_scale').val();
 
-            coursework.labs.points = $('#labs_points').val();
+                coursework.labs.points = $('#labs_points').val();
 
-            coursework.labs.percent = $('#labs_scale').val();
+                coursework.labs.percent = $('#labs_scale').val();
 
-            coursework.project.points = $('#project_points').val();
+                coursework.project.points = $('#project_points').val();
 
-            coursework.project.percent = $('#project_scale').val();
+                coursework.project.percent = $('#project_scale').val();
 
-            coursework.presentation.points = $('#presentation_points').val();
+                coursework.presentation.points = $('#presentation_points').val();
 
-            coursework.presentation.percent = $('#presentation_scale').val();
+                coursework.presentation.percent = $('#presentation_scale').val();
 
-            coursework.midterm.points = $('#midterm_points').val();
+                coursework.midterm.points = $('#midterm_points').val();
 
-            coursework.midterm.percent = $('#midterm_scale').val();
+                coursework.midterm.percent = $('#midterm_scale').val();
 
-            coursework.final.points = $('#final_points').val();
+                coursework.final.points = $('#final_points').val();
 
-            coursework.final.percent = $('#final_scale').val();
+                coursework.final.percent = $('#final_scale').val();
 
-            var data = {};
-            var grades = {};
-            grades.coursework = coursework;
-            grades.grade = grade;
+                var data = {};
+                var grades = {};
+                grades.coursework = coursework;
+                grades.grade = grade;
 
-            data.coursework = JSON.stringify(grades);
-            data.course_description = tinyMCE.activeEditor.getContent();
-            //NOTE SLIM FRAMEWORK ISSUE : PUT DOESNT WORK , THORUGH POSTMAN WORKS
-            $.ajax({
-                url: mainSiteURL + "course/" + sessionStorage.getItem('courseId'),
-                type: 'post',
-                dataType: "json",
-                data: JSON.stringify(data),
-                success: function () {
+                data.coursework = JSON.stringify(grades);
+                data.course_description = tinyMCE.activeEditor.getContent();
+                //NOTE SLIM FRAMEWORK ISSUE : PUT DOESNT WORK , THORUGH POSTMAN WORKS
+                $.ajax({
+                    url: mainSiteURL + "course/" + sessionStorage.getItem('courseId'),
+                    type: 'post',
+                    dataType: "json",
+                    data: JSON.stringify(data),
+                    success: function () {
 
-                    alert('Course Setting Updated.');
-                    GRADE_CALC.getCourseSetting();
+                        alert('Course Setting Updated.');
+                        $('.ui-popup').popup('close');
+                        GRADE_CALC.getCourseSetting();
 
-                },
-                error: function () {
-                    alert('Failed to update course setting.');
-                }
-            });
+                    },
+                    error: function () {
+                        alert('Failed to update course setting.');
+                        $('.ui-popup').popup('close');
+
+
+                    }
+                });
+
+
+            }
+
 
         },
         getStudents: function () {
