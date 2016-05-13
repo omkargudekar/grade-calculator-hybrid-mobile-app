@@ -24,13 +24,20 @@
     });
     </script>
     <script type="text/javascript" src="js/app.js"></script>
-
+    <link rel="stylesheet" href="vendor/waves/waves.min.css" />
+    <link rel="stylesheet" href="vendor/wow/animate.css" />
+    <link rel="stylesheet" href="css/nativedroid2.css" />
+    <link rel="stylesheet" href="css/nativedroid2.color.deep-purple.css" />
+    <script src="vendor/waves/waves.min.js"></script>
+    <script src="vendor/wow/wow.min.js"></script>
+    <script src="js/nativedroid2.js"></script>
+    <script src="js/nd2settings.js"></script>
 
 </head>
 <body>
 <div id="home" data-role="page">
 
-    <div data-role="panel" id="navpanel">
+    <div data-role="panel" id="navpanel" data-display="overlay" data-position-fixed="true">
         <div data-role="header">
             <h3>Menu</h3>
         </div>
@@ -66,7 +73,7 @@
 
         </div>
 
-        <table data-role="table" data-mode="columntoggle" class="ui-responsive ui-shadow gk-decorate table-stripe table-stroke grade-table" is="jqm-table">
+        <table data-role="table" data-mode="column" class="ui-responsive ui-shadow gk-decorate table-stripe table-stroke grade-table" is="jqm-table">
             <thead>
             <tr>
                 <th>Tasks</th>
@@ -126,7 +133,7 @@
 
 
         <br>
-        <table data-role="table" data-mode="columntoggle" class="ui-responsive ui-shadow gk-decorate table-stripe table-stroke grade-table" is="jqm-table">
+        <table data-role="table" data-mode="column" class="ui-responsive ui-shadow gk-decorate table-stripe table-stroke grade-table" is="jqm-table">
             <thead>
             <tr>
                 <th>Grade</th>
@@ -270,7 +277,7 @@
 
 
         <div data-role="popup" id="courseworkGradeEdit" class="fullscreen-popup" data-dismissible="true" data-overlay-theme="b" style="max-width:100%">
-            <a href="#"  data-role="button" data-theme="b" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
+            <a href="#" data-rel="back" data-role="button" data-theme="b" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
 
             <div data-role="header" data-theme="a">
                 <h1>Grade</h1>

@@ -1,204 +1,59 @@
-.ui-table-columntoggle-btn {
-    display: none !important;
-}
+.ui-input-search:after {
+  background-image: none !important; }
 
-.btn {
-    background-color: #8EC112;
-    border: 1px solid #8EC112;
-    -webkit-border-radius: 6;
-    -moz-border-radius: 6;
-    border-radius: 6px;
-    color: #fff !important;
-    font-size: 14px!important;
-    padding: 3px 4px 3px 4px;
-    text-decoration: none!important;
-    font-weight: normal!important;
-    text-shadow:none!important;
-    margin-left: 4px;
-}
-#chart{
-    width:calc(100vw - 30px);
-}
-.loginPanel{
-        margin-top:10%;
-}
+.ui-input-search {
+  background-repeat: no-repeat;
+  background-position: 96% 50%;
+  background-image: url("data:image/svg+xml;charset=US-ASCII,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22iso-8859-1%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20version%3D%221.1%22%20id%3D%22Layer_1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20x%3D%220px%22%20y%3D%220px%22%20%20width%3D%2214px%22%20height%3D%2214px%22%20viewBox%3D%220%200%2014%2014%22%20style%3D%22enable-background%3Anew%200%200%2014%2014%3B%22%20xml%3Aspace%3D%22preserve%22%3E%3Cpath%20d%3D%22M10.171%2C8.766c0.617-0.888%2C0.979-1.964%2C0.979-3.126c0-3.037-2.463-5.5-5.5-5.5s-5.5%2C2.463-5.5%2C5.5s2.463%2C5.5%2C5.5%2C5.5%20c1.152%2C0%2C2.223-0.355%2C3.104-0.962l3.684%2C3.683l1.414-1.414L10.171%2C8.766z%20M5.649%2C9.14c-1.933%2C0-3.5-1.567-3.5-3.5%20c0-1.933%2C1.567-3.5%2C3.5-3.5c1.933%2C0%2C3.5%2C1.567%2C3.5%2C3.5C9.149%2C7.572%2C7.582%2C9.14%2C5.649%2C9.14z%22%2F%3E%3C%2Fsvg%3E"); }
 
-.btn:hover {
-   color: #6b8cae;
+.mobile-pop-up, div#courseworkPointsEdit-popup, div#courseworkRatioEdit-popup, div#courseworkGradeEdit-popup {
+  width: 100%;
+  box-shadow: 0px 4px 14px #5D5D5D; }
 
-}
+div#courseworkPointsEdit-popup, div#courseworkRatioEdit-popup {
+  top: 27px !important; }
 
-.editbar{
-    margin-bottom: 7px!important;
-}
+.ui-input-text:after, .ui-input-search:after {
+  left: 0; }
 
-.right{
-    text-align: right!important;
-    padding-right: 4px;
+.ui-controlgroup-controls a.ui-shadow:not(:focus) {
+  box-shadow: 0 2px 6px #A0A0A0;
+  margin-bottom: 6px;
+  font-size: 14px; }
 
-}
+.ui-controlgroup-vertical .ui-controlgroup-controls .ui-btn.ui-last-child {
+  border-bottom-width: 1px;
+  position: absolute;
+  width: 239px;
+  bottom: 13px; }
 
-[data-role="header"][data-position="fixed"]{
-    background-color: #0D284B;
-    color:#fff;
-    text-shadow: none;
+div#navpanel h3.ui-title {
+  text-align: center; }
 
-}
-.grade-table{
+.ui-slider-track.ui-mini {
+  height: 1px; }
 
-        font-size: 14px!important;
-}
+.ui-field-contain .ui-controlgroup {
+  text-align: center; }
 
-.ui-popup-container, .ui-popup {
-    height: auto;
-    width: 100%;
-    background-color: #fff;
-}
+.ui-input-text.ui-body-inherit.ui-corner-all.ui-mini.ui-shadow-inset.ui-btn input {
+  width: 50vw !important; }
 
-#courseworkRatioEdit .ui-slider-track {
-    height: 6px;
-}
-#courseworkRatioEdit .ui-slider-handle {
-    height: 6px;
-    top: 0%;
-}
+.ui-navbar li:last-child .ui-btn {
+  font-size: 17px; }
 
-#courseworkRatioEdit .ui-slider-handle {
+.ui-listview > li {
+  border-bottom: 1px solid #b7b7b7; }
 
-    width: 20px!important;
-    height:28px!important;
-}
+a.ui-btn.ui-btn-icon-right.ui-icon-carat-r {
+  font-weight: 400; }
+  a.ui-btn.ui-btn-icon-right.ui-icon-carat-r span.course-number {
+    font-weight: 600;
+    margin-right: 9px;
+    position: relative; }
+    a.ui-btn.ui-btn-icon-right.ui-icon-carat-r span.course-number:after {
+      content: ":";
+      position: absolute;
+      right: -6px; }
 
-
-#courseworkRatioEdit .ui-slider-input{
-    height: 12px!important;
-}
-
-.no-padding{
-    margin-top: 2px!important;
-    margin-bottom: 2px!important;
-    padding: 0!important;
-
-}
-
-.bottom-padding{
-    margin-top: 4px!important;
-    margin-bottom: 7px!important;
-    padding: 0!important;
-
-    border: none!important;
-}
-
-[data-role="spinbox"] {
-    min-width: 120px !important;
-    /*background-color: #38c!important;*/
-    /*color: white!important;*/
-}
-
-.ui-controlgroup-controls {
-    margin-top: 3px!important;
-}
-
-.listview{
-
-
-}
-.left{
-    text-align: left;
-}
-
-.center{
-    text-align: center;
-}
-.course-number{
-
-    border: 1px solid #680000;
-    color: #680000;
-    padding: 3px 4px 3px 4px;
-    -webkit-border-radius: 6;
-    -moz-border-radius: 6;
-    border-radius: 6px;
-    font-size: 12px!important;
-}
-.ui-popup-container{
-    background-color: transparent;
-}
-.fullscreen-popup{
-    width: 90%;
-    margin: auto;
-}
-.ui-navbar li:last-child .ui-btn{
-    margin-right: 0;
-}
-div#studentSearch {
-    width: 100%;
-    margin: 20px 0;
-}
-div#studentSearch form.ui-filterable {
-    width: 90%;
-    margin: auto;
-}
-/*.ui-popup-screen.ui-overlay-b.in{*/
-    /*height:100% !important;*/
-/*}*/
-.student-list-popup {
-    max-height: 88vh;
-    overflow: scroll;
-}
-#home{
-    overflow-y: hidden;
-}
-
-#bars-button{
-
-    background-color: transparent!important;
-    border: none!important;
-    padding: 2px;
-    font-size: 25px;
-    margin-top: -3px;
-    color: #bdbdbd;
-    text-shadow: none!important;
-    -webkit-box-shadow: none;
-    -moz-box-shadow: none;
-    box-shadow: none;
-
-}
-div#courseworkDescriptionEdit {
-    width: 100%;
-    margin: 20px 0;
-}
-
-.ui-panel-inner {
-    padding:0px;
-}
-.ui-controlgroup {
-    margin:0;
-    margin-top: -4px;
-}
-.course-details{
-
-    font-weight: bold;
-    font-size: 18px;
-    text-align: center;
-
-
-}
-
-.ui-table th, .ui-table td{
-    padding: 2px 3px 2px 3px;
-}
-
-.ui-li-has-thumb > a{
-    padding:0;
-}
-
-
-
-
-
-
-.ui-block-a, .ui-block-b, .ui-block-c, .ui-block-d, .ui-block-e{
-
-    padding:3px!important;
-}
-
+/*# sourceMappingURL=app.css.map */

@@ -493,6 +493,9 @@ var GRADE_CALC = function () {
                             },
                             backgroundColor: 'transparent',
                         },
+                        credits: {
+                            enabled: false
+                        },
                         title: {
                             text: ''
                         },
