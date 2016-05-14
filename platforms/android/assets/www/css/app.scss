@@ -33,6 +33,7 @@
       box-shadow: none !important;
     }
     .save-btn{
+      overflow: hidden;
       position: fixed;
       bottom: 7px;
       width: 63%;
@@ -233,6 +234,7 @@ a.ui-btn.ui-btn-icon-right.ui-icon-carat-r {
     margin-top: 50px;
     color: white;
     border-radius: 25px;
+    overflow: hidden;
   }
 }
 

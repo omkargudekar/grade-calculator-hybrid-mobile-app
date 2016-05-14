@@ -72,7 +72,7 @@ var GRADE_CALC = function () {
         validateRange: function () {
 
             var validate = false;
-            if ($('#a-rangeb').val() < 101 && $('#a-rangea').val() >= $('#b-rangeb').val() && $('#b-rangea').val() >= $('#c-rangeb').val() && $('#c-rangea').val() >= $('#d-rangeb').val() && $('#d-rangea').val() >= $('#f-rangeb').val()) {
+            if ($('#a-rangeb').val() < 101 && $('#a-rangea').val() == $('#b-rangeb').val() && $('#b-rangea').val() == $('#c-rangeb').val() && $('#c-rangea').val() == $('#d-rangeb').val() && $('#d-rangea').val() == $('#f-rangeb').val() ) {
 
                 if (( Number($('#homework_scale').val()) + Number($('#labs_scale').val()) + Number($('#project_scale').val()) + Number($('#presentation_scale').val()) + Number($('#midterm_scale').val()) + Number($('#final_scale').val())) == 100) {
 

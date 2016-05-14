@@ -27,6 +27,7 @@
       border: 0 !important;
       box-shadow: none !important; }
     .mobile-pop-up .fullscreen-popup.ui-popup.ui-body-inherit.ui-overlay-shadow.ui-corner-all .save-btn, div#courseworkPointsEdit-popup .fullscreen-popup.ui-popup.ui-body-inherit.ui-overlay-shadow.ui-corner-all .save-btn, div#courseworkRatioEdit-popup .fullscreen-popup.ui-popup.ui-body-inherit.ui-overlay-shadow.ui-corner-all .save-btn, div#courseworkDescriptionEdit-popup .fullscreen-popup.ui-popup.ui-body-inherit.ui-overlay-shadow.ui-corner-all .save-btn, div#courseworkGradeEdit-popup .fullscreen-popup.ui-popup.ui-body-inherit.ui-overlay-shadow.ui-corner-all .save-btn, div#newCourseAdd-popup .fullscreen-popup.ui-popup.ui-body-inherit.ui-overlay-shadow.ui-corner-all .save-btn {
+      overflow: hidden;
       position: fixed;
       bottom: 7px;
       width: 63%;
@@ -188,7 +189,8 @@ a.ui-btn.ui-btn-icon-right.ui-icon-carat-r {
     background-color: #F65C74 !important;
     margin-top: 50px;
     color: white;
-    border-radius: 25px; }
+    border-radius: 25px;
+    overflow: hidden; }
 
 .login-page {
   height: calc(100vh);
