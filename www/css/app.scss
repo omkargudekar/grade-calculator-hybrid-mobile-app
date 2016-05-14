@@ -49,13 +49,10 @@
 
     }
   }
-
-
 }
 
-div#courseworkPointsEdit-popup, div#courseworkRatioEdit-popup,div#courseworkDescriptionEdit-popup, div#courseworkGradeEdit-popup, div#newCourseAdd-popup {
+div#courseworkPointsEdit-popup, div#courseworkRatioEdit-popup,div#courseworkDescriptionEdit-popup, div#courseworkGradeEdit-popup {
   @extend .mobile-pop-up;
-  top: 27px !important;
 }
 
 div#newCourseAdd-popup{
@@ -247,7 +244,6 @@ a.ui-btn.ui-btn-icon-right.ui-icon-carat-r {
   top: 0;
   right: 0;
   left: 0;
-  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#606c88+0,3f4c6b+100;Grey+3D+%232 */
   background: #606c88; /* Old browsers */
   background: -moz-radial-gradient(center, ellipse cover,  #606c88 0%, #3f4c6b 100%); /* FF3.6-15 */
   background: -webkit-radial-gradient(center, ellipse cover,  #606c88 0%,#3f4c6b 100%); /* Chrome10-25,Safari5.1-6 */
@@ -261,7 +257,7 @@ a.ui-btn.ui-btn-icon-right.ui-icon-carat-r {
 .login-header{
   position: absolute;
   top: 6%;
-  left: 21%;
+  left: 20%;
   width: 60%;
   h3{
     font-family: 'Roboto', sans-serif;
@@ -315,7 +311,7 @@ thead{
 
 }
 
-student-select,.performace{
+.student-select,.performace{
   border-bottom: transparent;
   margin-bottom: 30px;
 
@@ -331,6 +327,11 @@ student-select,.performace{
   font-size: 21px;
   text-decoration: underline;
 }
-#chart{
+#chart {
   margin-top: 20%;
+}
+.invalid-login{
+  color: rgb(236, 141, 131);
+  text-align: center;
+  margin-top: 40px;
 }

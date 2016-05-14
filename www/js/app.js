@@ -9,53 +9,49 @@ var courseListURL = "http://publicvoid.net/grade/";
 var GRADE_CALC = function () {
 
     return {
-        gradeCalcFun:function(){
+        gradeCalcFun: function () {
 
             var coursework = JSON.parse(sessionStorage.getItem('coursework'));
             var grade = JSON.parse(sessionStorage.getItem('grade'));
             var obtainedGrade;
 
 
-            if(Number($('#homework').val()) > Number(coursework.homework.points) || Number(($('#labs').val()) > Number(coursework.labs.points)) || Number($('#presentation').val())> Number(coursework.presentation.points)|| Number($('#project').val()) > Number(coursework.project.points) || Number($('#midterm').val())>Number(coursework.midterm.points) || Number($('#final').val())>  Number(coursework.final.points))
-            {
+            if (Number($('#homework').val()) > Number(coursework.homework.points) || Number(($('#labs').val()) > Number(coursework.labs.points)) || Number($('#presentation').val()) > Number(coursework.presentation.points) || Number($('#project').val()) > Number(coursework.project.points) || Number($('#midterm').val()) > Number(coursework.midterm.points) || Number($('#final').val()) > Number(coursework.final.points)) {
                 $('.result').html('Invalid Marks').css({
                     color: "red"
                 });
             }
-            else
-            {
+            else {
 
-                var totalPer= (((($('#homework').val() / coursework.homework.points))* coursework.homework.percent)) +
-                    (((($('#labs').val() / coursework.labs.points))* coursework.labs.percent)) +
-                    (((($('#presentation').val() / coursework.presentation.points))* coursework.presentation.percent)) +
-                    (((($('#project').val() / coursework.project.points))* coursework.project.percent)) +
-                    (((($('#midterm').val() / coursework.midterm.points))* coursework.midterm.percent)) +
-                    (((($('#final').val() / coursework.final.points))* coursework.final.percent));
-
+                var totalPer = (((($('#homework').val() / coursework.homework.points)) * coursework.homework.percent)) +
+                    (((($('#labs').val() / coursework.labs.points)) * coursework.labs.percent)) +
+                    (((($('#presentation').val() / coursework.presentation.points)) * coursework.presentation.percent)) +
+                    (((($('#project').val() / coursework.project.points)) * coursework.project.percent)) +
+                    (((($('#midterm').val() / coursework.midterm.points)) * coursework.midterm.percent)) +
+                    (((($('#final').val() / coursework.final.points)) * coursework.final.percent));
 
 
-
-                if(totalPer >= grade.A.min){
-                    obtainedGrade="A";
+                if (totalPer >= grade.A.min) {
+                    obtainedGrade = "A";
                 }
-                else if(totalPer>=grade.B.min){
-                    obtainedGrade="B";
+                else if (totalPer >= grade.B.min) {
+                    obtainedGrade = "B";
                 }
-                else if(totalPer>=grade.C.min){
-                    obtainedGrade="C";
+                else if (totalPer >= grade.C.min) {
+                    obtainedGrade = "C";
                 }
-                else if(totalPer>=grade.D.min){
-                    obtainedGrade="D";
+                else if (totalPer >= grade.D.min) {
+                    obtainedGrade = "D";
                 }
-                else{
-                    obtainedGrade="F";
+                else {
+                    obtainedGrade = "F";
                 }
 
 
-                var data={};
-                data.course_id=sessionStorage.getItem('courseId');
-                data.grade=obtainedGrade;
-                data.student_id =$('#students option:selected').val();
+                var data = {};
+                data.course_id = sessionStorage.getItem('courseId');
+                data.grade = obtainedGrade;
+                data.student_id = $('#students option:selected').val();
 
                 $.ajax({
                     url: courseListURL + "performance",
@@ -64,7 +60,7 @@ var GRADE_CALC = function () {
                     data: JSON.stringify(data),
                     success: function (data) {
 
-                        $('.result').html('Grade : '+obtainedGrade+'. Saved in database.').css({
+                        $('.result').html('Grade : ' + obtainedGrade + '. Saved in database.').css({
                             color: 'green'
                         });
                     }
@@ -72,19 +68,15 @@ var GRADE_CALC = function () {
             }
 
 
-
-
-
         },
-        validateRange:function(){
+        validateRange: function () {
 
-            var validate=false;
-            if($('#a-rangeb').val()<101 && $('#a-rangea').val() >= $('#b-rangeb').val() &&  $('#b-rangea').val() >=$('#c-rangeb').val() &&  $('#c-rangea').val()>=  $('#d-rangeb').val() && $('#d-rangea').val()>= $('#f-rangeb').val() )
-            {
+            var validate = false;
+            if ($('#a-rangeb').val() < 101 && $('#a-rangea').val() >= $('#b-rangeb').val() && $('#b-rangea').val() >= $('#c-rangeb').val() && $('#c-rangea').val() >= $('#d-rangeb').val() && $('#d-rangea').val() >= $('#f-rangeb').val()) {
 
-                if(( Number($('#homework_scale').val()) + Number($('#labs_scale').val())+Number($('#project_scale').val())+Number($('#presentation_scale').val())+Number($('#midterm_scale').val())+Number($('#final_scale').val()))==100){
+                if (( Number($('#homework_scale').val()) + Number($('#labs_scale').val()) + Number($('#project_scale').val()) + Number($('#presentation_scale').val()) + Number($('#midterm_scale').val()) + Number($('#final_scale').val())) == 100) {
 
-                    validate=true;
+                    validate = true;
                     $('span.grade-result').html('');
                     $('.grade-head').css({
                         "background-color": '#673AB7'
@@ -102,11 +94,11 @@ var GRADE_CALC = function () {
                 }
 
             }
-            else{
+            else {
                 $('span.grade-result').html(': Invalid Range');
                 $('.grade-head').css({
                     "background-color": 'red'
-            });
+                });
             }
 
 
@@ -127,11 +119,14 @@ var GRADE_CALC = function () {
                 success: function (data) {
                     data = JSON.parse(data);
                     if (data.status == 200) {
+                        $('.invalid-login').html('');
                         window.location = "courses.html";
                     }
-                    else {
-                        alert('Invalid Login');
-                    }
+                },
+                error: function (data) {
+                    $('.invalid-login').html('Invalid Credentials');
+                    // alert('Invalid Login');
+
                 }
             });
 
@@ -161,7 +156,7 @@ var GRADE_CALC = function () {
                 }
             });
         },
-        getStudentDropDownList:function(){
+        getStudentDropDownList: function () {
 
             $.ajax({
                 url: studentListURL + "students",
@@ -185,7 +180,7 @@ var GRADE_CALC = function () {
                 }
             });
         },
-        getGradeSettings:function(){
+        getGradeSettings: function () {
 
 
             $.ajax({
@@ -383,8 +378,7 @@ var GRADE_CALC = function () {
         saveSettings: function () {
 
 
-            if(GRADE_CALC.validateRange())
-            {
+            if (GRADE_CALC.validateRange()) {
                 tinyMCE.triggerSave();
                 var coursework = JSON.parse(sessionStorage.getItem('coursework'));
                 var grade = JSON.parse(sessionStorage.getItem('grade'));

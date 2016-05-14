@@ -1,3 +1,4 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,100,300,500);
 .ui-input-search:after {
   background-image: none !important; }
 
@@ -139,8 +140,8 @@ a.ui-btn.ui-btn-icon-right.ui-icon-carat-r {
 .loginPanel {
   position: absolute;
   top: 40%;
-  left: 19%;
-  width: 60%; }
+  left: 16%;
+  width: 68%; }
   .loginPanel .input {
     position: relative; }
     .loginPanel .input .ui-input-text {
@@ -148,12 +149,13 @@ a.ui-btn.ui-btn-icon-right.ui-icon-carat-r {
       border: 0;
       background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
       padding-left: 46px;
-      border-radius: 5px;
-      color: white; }
+      border-radius: 20px; }
       .loginPanel .input .ui-input-text input {
         text-shadow: none;
         font-size: 17px;
         font-weight: 100;
+        padding: 14px;
+        color: #f9f9f9;
         /* FF 4-18 */
         /* FF 19+ */
         /* IE 10+ */ }
@@ -173,31 +175,39 @@ a.ui-btn.ui-btn-icon-right.ui-icon-carat-r {
       position: absolute;
       left: 0;
       color: white;
-      font-size: 23px;
-      width: 38px;
-      padding-top: 7px;
+      font-size: 26px;
+      width: 45px;
+      padding-top: 9px;
       text-align: center;
-      height: 30px;
+      height: 39px;
       background-color: rgba(0, 0, 0, 0.54);
-      border-top-left-radius: 5px;
-      border-bottom-left-radius: 5px; }
+      border-top-left-radius: 20px;
+      border-bottom-left-radius: 20px;
+      padding-left: 6px; }
   .loginPanel a.ui-btn.waves-effect.waves-button {
     background-color: #F65C74 !important;
     margin-top: 50px;
-    color: white; }
+    color: white;
+    border-radius: 25px; }
 
 .login-page {
-  background-image: linear-gradient(rgba(86, 39, 137, 0.58), rgba(63, 120, 150, 0.79)), url("../img/sjsu.jpg");
   height: calc(100vh);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: 16% 100%;
   -webkit-filter: blur(1px);
   filter: blur(1px);
   position: fixed;
   top: 0;
   right: 0;
-  left: 0; }
+  left: 0;
+  background: #606c88;
+  /* Old browsers */
+  background: -moz-radial-gradient(center, ellipse cover, #606c88 0%, #3f4c6b 100%);
+  /* FF3.6-15 */
+  background: -webkit-radial-gradient(center, ellipse cover, #606c88 0%, #3f4c6b 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: radial-gradient(ellipse at center, #606c88 0%, #3f4c6b 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#606c88', endColorstr='#3f4c6b',GradientType=1 );
+  /* IE6-9 fallback on horizontal gradient */ }
 
 .login {
   padding: 0; }
@@ -205,11 +215,48 @@ a.ui-btn.ui-btn-icon-right.ui-icon-carat-r {
 .login-header {
   position: absolute;
   top: 6%;
-  left: 24%;
+  left: 20%;
   width: 60%; }
   .login-header h3 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 100;
     font-size: 50px;
-    text-shadow: 0px 3px 13px #292929; }
+    color: white;
+    text-align: center; }
+  .login-header .fa {
+    background: white;
+    border-radius: 50%;
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#9dd53a+0,a1d54f+50,80c217+51,7cbc0a+100;Green+Gloss+%231 */
+    background: #9dd53a;
+    /* Old browsers */
+    background: -moz-linear-gradient(top, #9dd53a 0%, #a1d54f 50%, #80c217 51%, #7cbc0a 100%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, #9dd53a 0%, #a1d54f 50%, #80c217 51%, #7cbc0a 100%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, #9dd53a 0%, #a1d54f 50%, #80c217 51%, #7cbc0a 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#9dd53a', endColorstr='#7cbc0a',GradientType=0 );
+    /* IE6-9 */
+    font-size: 58px;
+    padding: 5px; }
+
+thead {
+  background: aliceblue;
+  background: #9dd53a;
+  background: -moz-linear-gradient(top, #9dd53a 0%, #a1d54f 50%, #80c217 51%, #7cbc0a 100%);
+  background: -webkit-linear-gradient(top, #9dd53a 0%, #a1d54f 50%, #80c217 51%, #7cbc0a 100%);
+  background: linear-gradient(to bottom, #9dd53a 0%, #a1d54f 50%, #80c217 51%, #7cbc0a 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#9dd53a', endColorstr='#7cbc0a',GradientType=0 );
+  color: white; }
+
+#studentList li.student-details a.ui-btn {
+  padding-left: 111px;
+  padding-top: 0;
+  padding-bottom: 18px; }
+  #studentList li.student-details a.ui-btn img {
+    border-radius: 2px; }
+  #studentList li.student-details a.ui-btn h2 {
+    margin-top: 0; }
 
 .student-select, .performace {
   border-bottom: transparent;
@@ -227,5 +274,10 @@ a.ui-btn.ui-btn-icon-right.ui-icon-carat-r {
 
 #chart {
   margin-top: 20%; }
+
+.invalid-login {
+  color: #ec8d83;
+  text-align: center;
+  margin-top: 40px; }
 
 /*# sourceMappingURL=app.css.map */
