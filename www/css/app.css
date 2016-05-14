@@ -113,7 +113,7 @@ a.ui-btn.ui-btn-icon-right.ui-icon-carat-r {
       border: 0;
       background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
       padding-left: 46px;
-      border-radius: 5px; }
+      border-radius: 20px; }
       .loginPanel .input .ui-input-text input {
         text-shadow: none;
         font-size: 17px;
@@ -145,8 +145,9 @@ a.ui-btn.ui-btn-icon-right.ui-icon-carat-r {
       text-align: center;
       height: 39px;
       background-color: rgba(0, 0, 0, 0.54);
-      border-top-left-radius: 5px;
-      border-bottom-left-radius: 5px; }
+      border-top-left-radius: 20px;
+      border-bottom-left-radius: 20px;
+      padding-left: 6px; }
   .loginPanel a.ui-btn.waves-effect.waves-button {
     background-color: #F65C74 !important;
     margin-top: 50px;
