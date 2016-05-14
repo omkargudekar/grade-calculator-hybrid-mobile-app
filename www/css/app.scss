@@ -9,17 +9,57 @@
 }
 
 .mobile-pop-up {
-  width: 100%;
+  position: fixed;
+  min-width: 100%;
+  height:100%;
+  top: 0 !important;
+  left: 0 !important;
   box-shadow: 0px 4px 14px #5D5D5D;
+  .fullscreen-popup.ui-popup.ui-body-inherit.ui-overlay-shadow.ui-corner-all{
+    min-width: 100%;
+    min-height:100%;
+    overflow: scroll;
+    a.ui-btn-right.ui-link.ui-btn.ui-btn-b.ui-icon-delete.ui-btn-icon-notext.ui-shadow.ui-corner-all.waves-effect.waves-button.waves-effect.waves-button{
+      top: 9px;
+      right: 9px;
+    }
+    .ui-field-contain:last-child{
+      border-bottom-width:1px ;
+    }
+    .ui-footer.ui-bar-inherit{
+      border: 0 !important;
+      box-shadow: none !important;
+    }
+    .save-btn{
+      position: fixed;
+      bottom: 7px;
+      width: 63%;
+      border: 1px solid green;
+      display: block;
+      border-radius: 25px;
+      left: 14%;
+      color: white;
+      background: #bfd255; /* Old browsers */
+      background: -moz-linear-gradient(top,  #bfd255 0%, #8eb92a 50%, #72aa00 51%, #9ecb2d 100%); /* FF3.6-15 */
+      background: -webkit-linear-gradient(top,  #bfd255 0%,#8eb92a 50%,#72aa00 51%,#9ecb2d 100%); /* Chrome10-25,Safari5.1-6 */
+      background: linear-gradient(to bottom,  #bfd255 0%,#8eb92a 50%,#72aa00 51%,#9ecb2d 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#bfd255', endColorstr='#9ecb2d',GradientType=0 ); /* IE6-9 */
+
+    }
+  }
+
+  
 }
 
-div#courseworkPointsEdit-popup, div#courseworkRatioEdit-popup {
+div#courseworkPointsEdit-popup, div#courseworkRatioEdit-popup,div#courseworkDescriptionEdit-popup, div#courseworkGradeEdit-popup, div#newCourseAdd-popup {
   @extend .mobile-pop-up;
-  top: 27px !important;
 }
 
-div#courseworkGradeEdit-popup {
+div#newCourseAdd-popup{
   @extend .mobile-pop-up;
+  .ui-field-contain{
+    border-bottom: none;
+  }
 }
 
 .ui-input-text:after, .ui-input-search:after {
@@ -27,9 +67,11 @@ div#courseworkGradeEdit-popup {
 }
 
 .ui-controlgroup-controls a.ui-shadow:not(:focus) {
-  margin-left: 10px;
   text-align: left;
   font-size: 14px;
+  i.fa{
+    margin-right: 10px;
+  }
 }
 
 .ui-controlgroup-vertical .ui-controlgroup-controls .ui-btn.ui-last-child {
@@ -153,6 +195,7 @@ a.ui-btn.ui-btn-icon-right.ui-icon-carat-r {
       background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0, 0, 0, 0.2));
       padding-left: 46px;
       border-radius: 5px;
+      color: white;
       input {
         text-shadow: none;
         font-size: 17px;
@@ -215,4 +258,24 @@ a.ui-btn.ui-btn-icon-right.ui-icon-carat-r {
     font-size: 50px;
     text-shadow: 0px 3px 13px #292929;
   }
+}
+
+.student-select,.performace{
+  border-bottom: transparent;
+  margin-bottom: 30px;
+
+  label{
+    font-size: 20px;
+    padding-bottom: 5px;
+  }
+}
+.result{
+  margin-top: 20%;
+  width: 100%;
+  text-align: center;
+  font-size: 21px;
+  text-decoration: underline;
+}
+#chart{
+  margin-top: 20%;
 }

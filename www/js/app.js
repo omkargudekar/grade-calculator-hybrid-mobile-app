@@ -16,9 +16,11 @@ var GRADE_CALC = function () {
             var obtainedGrade;
 
 
-            if($('#homework').val() > coursework.homework.points || ($('#labs').val() > coursework.labs.points) ||$('#presentation').val()> coursework.presentation.points||$('#project').val() > coursework.project.points|| $('#midterm').val()>coursework.midterm.points || $('#final').val()>  coursework.final.points)
+            if(Number($('#homework').val()) > Number(coursework.homework.points) || Number(($('#labs').val()) > Number(coursework.labs.points)) || Number($('#presentation').val())> Number(coursework.presentation.points)|| Number($('#project').val()) > Number(coursework.project.points) || Number($('#midterm').val())>Number(coursework.midterm.points) || Number($('#final').val())>  Number(coursework.final.points))
             {
-                alert('Invalid Marks.')
+                $('.result').html('Invalid Marks').css({
+                    color: "red"
+                });
             }
             else
             {
@@ -62,7 +64,9 @@ var GRADE_CALC = function () {
                     data: JSON.stringify(data),
                     success: function (data) {
 
-                        alert('Grade : '+obtainedGrade+'. Saved in database.')
+                        $('.result').html('Grade : '+obtainedGrade+'. Saved in database.').css({
+                            color: 'green'
+                        });
                     }
                 });
             }
@@ -81,15 +85,28 @@ var GRADE_CALC = function () {
                 if(( Number($('#homework_scale').val()) + Number($('#labs_scale').val())+Number($('#project_scale').val())+Number($('#presentation_scale').val())+Number($('#midterm_scale').val())+Number($('#final_scale').val()))==100){
 
                     validate=true;
+                    $('span.grade-result').html('');
+                    $('.grade-head').css({
+                        "background-color": '#673AB7'
+                    });
+                    $('span.ratio-result').html('');
+                    $('.ratio-head').css({
+                        "background-color": '#673AB7'
+                    });
                 }
                 else {
-                    alert('Invalid coursework setting')
-
+                    $('span.ratio-result').html(': Invalid Ratio');
+                    $('.ratio-head').css({
+                        "background-color": 'red'
+                    });
                 }
 
             }
             else{
-                alert('Invalid grade setting')
+                $('span.grade-result').html(': Invalid Range');
+                $('.grade-head').css({
+                    "background-color": 'red'
+            });
             }
 
 
@@ -269,11 +286,11 @@ var GRADE_CALC = function () {
                 data: JSON.stringify(data),
                 success: function (data) {
 
-                    alert('New course added');
+                    // alert('New course added');
                     GRADE_CALC.goCourseHome(data.id);
                 },
                 error: function () {
-                    alert('Failed to add new course.');
+                    // alert('Failed to add new course.');
                 }
             });
 
@@ -427,13 +444,13 @@ var GRADE_CALC = function () {
                     data: JSON.stringify(data),
                     success: function () {
 
-                        alert('Course Setting Updated.');
+                        // alert('Course Setting Updated.');
                         $('.ui-popup').popup('close');
                         GRADE_CALC.getCourseSetting();
 
                     },
                     error: function () {
-                        alert('Failed to update course setting.');
+                        // alert('Failed to update course setting.');
                         $('.ui-popup').popup('close');
 
 
