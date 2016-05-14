@@ -457,10 +457,10 @@ var GRADE_CALC = function () {
                     for (var counter = 0; counter < data.length; counter++) {
                         try {
                             $("#studentList").append('' +
-                                ' <li>' +
+                                ' <li class="student-details">' +
                                 '<a> ' +
                                 '<img src="' + data[counter].student_image + '"> ' +
-                                '<h2>' +
+                                '<h2 class="">' +
                                 '<i class="fa fa-user" aria-hidden="true"></i> ' + data[counter].student_fname + ',' + data[counter].student_lname + ' </h2>' +
                                 ' <p>' + data[counter].student_id + ' | ' +
                                 '<i class="fa fa-phone" aria-hidden="true"></i>  ' + data[counter].student_contact +

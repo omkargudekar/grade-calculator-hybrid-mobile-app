@@ -192,6 +192,7 @@ a.ui-btn.ui-btn-icon-right.ui-icon-carat-r {
     background-color: #F65C74 !important;
     margin-top: 50px;
     color: white;
+    border-radius: 25px;
   }
 }
 
@@ -217,7 +218,7 @@ a.ui-btn.ui-btn-icon-right.ui-icon-carat-r {
 .login-header{
   position: absolute;
   top: 6%;
-  left: 18%;
+  left: 21%;
   width: 60%;
   h3{
     font-family: 'Roboto', sans-serif;
@@ -239,5 +240,35 @@ a.ui-btn.ui-btn-icon-right.ui-icon-carat-r {
     font-size: 58px;
     padding: 5px;
   }
+}
+
+thead{
+  background: aliceblue;
+  background: #9dd53a;
+  background: -moz-linear-gradient(top, #9dd53a 0%, #a1d54f 50%, #80c217 51%, #7cbc0a 100%);
+  background: -webkit-linear-gradient(top, #9dd53a 0%,#a1d54f 50%,#80c217 51%,#7cbc0a 100%);
+  background: linear-gradient(to bottom, #9dd53a 0%,#a1d54f 50%,#80c217 51%,#7cbc0a 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#9dd53a', endColorstr='#7cbc0a',GradientType=0 );
+  color: white;
+}
+
+#studentList{
+
+    li.student-details{
+      a.ui-btn{
+        padding-left: 111px;
+        padding-top: 0;
+        padding-bottom: 18px;
+
+        img{
+          border-radius: 2px;
+        }
+
+        h2{
+          margin-top: 0;
+        }
+      }
+    }
+
 }
 
