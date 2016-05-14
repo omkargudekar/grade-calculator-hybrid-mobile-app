@@ -1,0 +1,283 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,100,300,500);
+.ui-input-search:after {
+  background-image: none !important; }
+
+.ui-input-search {
+  background-repeat: no-repeat;
+  background-position: 96% 50%;
+  background-image: url("data:image/svg+xml;charset=US-ASCII,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22iso-8859-1%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20version%3D%221.1%22%20id%3D%22Layer_1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20x%3D%220px%22%20y%3D%220px%22%20%20width%3D%2214px%22%20height%3D%2214px%22%20viewBox%3D%220%200%2014%2014%22%20style%3D%22enable-background%3Anew%200%200%2014%2014%3B%22%20xml%3Aspace%3D%22preserve%22%3E%3Cpath%20d%3D%22M10.171%2C8.766c0.617-0.888%2C0.979-1.964%2C0.979-3.126c0-3.037-2.463-5.5-5.5-5.5s-5.5%2C2.463-5.5%2C5.5s2.463%2C5.5%2C5.5%2C5.5%20c1.152%2C0%2C2.223-0.355%2C3.104-0.962l3.684%2C3.683l1.414-1.414L10.171%2C8.766z%20M5.649%2C9.14c-1.933%2C0-3.5-1.567-3.5-3.5%20c0-1.933%2C1.567-3.5%2C3.5-3.5c1.933%2C0%2C3.5%2C1.567%2C3.5%2C3.5C9.149%2C7.572%2C7.582%2C9.14%2C5.649%2C9.14z%22%2F%3E%3C%2Fsvg%3E"); }
+
+.mobile-pop-up, div#courseworkPointsEdit-popup, div#courseworkRatioEdit-popup, div#courseworkDescriptionEdit-popup, div#courseworkGradeEdit-popup, div#newCourseAdd-popup {
+  position: fixed;
+  min-width: 100%;
+  height: 100%;
+  top: 0 !important;
+  left: 0 !important;
+  box-shadow: 0px 4px 14px #5D5D5D; }
+  .mobile-pop-up .fullscreen-popup.ui-popup.ui-body-inherit.ui-overlay-shadow.ui-corner-all, div#courseworkPointsEdit-popup .fullscreen-popup.ui-popup.ui-body-inherit.ui-overlay-shadow.ui-corner-all, div#courseworkRatioEdit-popup .fullscreen-popup.ui-popup.ui-body-inherit.ui-overlay-shadow.ui-corner-all, div#courseworkDescriptionEdit-popup .fullscreen-popup.ui-popup.ui-body-inherit.ui-overlay-shadow.ui-corner-all, div#courseworkGradeEdit-popup .fullscreen-popup.ui-popup.ui-body-inherit.ui-overlay-shadow.ui-corner-all, div#newCourseAdd-popup .fullscreen-popup.ui-popup.ui-body-inherit.ui-overlay-shadow.ui-corner-all {
+    min-width: 100%;
+    min-height: 100%;
+    overflow: scroll; }
+    .mobile-pop-up .fullscreen-popup.ui-popup.ui-body-inherit.ui-overlay-shadow.ui-corner-all a.ui-btn-right.ui-link.ui-btn.ui-btn-b.ui-icon-delete.ui-btn-icon-notext.ui-shadow.ui-corner-all.waves-effect.waves-button.waves-effect.waves-button, div#courseworkPointsEdit-popup .fullscreen-popup.ui-popup.ui-body-inherit.ui-overlay-shadow.ui-corner-all a.ui-btn-right.ui-link.ui-btn.ui-btn-b.ui-icon-delete.ui-btn-icon-notext.ui-shadow.ui-corner-all.waves-effect.waves-button.waves-effect.waves-button, div#courseworkRatioEdit-popup .fullscreen-popup.ui-popup.ui-body-inherit.ui-overlay-shadow.ui-corner-all a.ui-btn-right.ui-link.ui-btn.ui-btn-b.ui-icon-delete.ui-btn-icon-notext.ui-shadow.ui-corner-all.waves-effect.waves-button.waves-effect.waves-button, div#courseworkDescriptionEdit-popup .fullscreen-popup.ui-popup.ui-body-inherit.ui-overlay-shadow.ui-corner-all a.ui-btn-right.ui-link.ui-btn.ui-btn-b.ui-icon-delete.ui-btn-icon-notext.ui-shadow.ui-corner-all.waves-effect.waves-button.waves-effect.waves-button, div#courseworkGradeEdit-popup .fullscreen-popup.ui-popup.ui-body-inherit.ui-overlay-shadow.ui-corner-all a.ui-btn-right.ui-link.ui-btn.ui-btn-b.ui-icon-delete.ui-btn-icon-notext.ui-shadow.ui-corner-all.waves-effect.waves-button.waves-effect.waves-button, div#newCourseAdd-popup .fullscreen-popup.ui-popup.ui-body-inherit.ui-overlay-shadow.ui-corner-all a.ui-btn-right.ui-link.ui-btn.ui-btn-b.ui-icon-delete.ui-btn-icon-notext.ui-shadow.ui-corner-all.waves-effect.waves-button.waves-effect.waves-button {
+      top: 9px;
+      right: 9px; }
+    .mobile-pop-up .fullscreen-popup.ui-popup.ui-body-inherit.ui-overlay-shadow.ui-corner-all .ui-field-contain:last-child, div#courseworkPointsEdit-popup .fullscreen-popup.ui-popup.ui-body-inherit.ui-overlay-shadow.ui-corner-all .ui-field-contain:last-child, div#courseworkRatioEdit-popup .fullscreen-popup.ui-popup.ui-body-inherit.ui-overlay-shadow.ui-corner-all .ui-field-contain:last-child, div#courseworkDescriptionEdit-popup .fullscreen-popup.ui-popup.ui-body-inherit.ui-overlay-shadow.ui-corner-all .ui-field-contain:last-child, div#courseworkGradeEdit-popup .fullscreen-popup.ui-popup.ui-body-inherit.ui-overlay-shadow.ui-corner-all .ui-field-contain:last-child, div#newCourseAdd-popup .fullscreen-popup.ui-popup.ui-body-inherit.ui-overlay-shadow.ui-corner-all .ui-field-contain:last-child {
+      border-bottom-width: 1px; }
+    .mobile-pop-up .fullscreen-popup.ui-popup.ui-body-inherit.ui-overlay-shadow.ui-corner-all .ui-footer.ui-bar-inherit, div#courseworkPointsEdit-popup .fullscreen-popup.ui-popup.ui-body-inherit.ui-overlay-shadow.ui-corner-all .ui-footer.ui-bar-inherit, div#courseworkRatioEdit-popup .fullscreen-popup.ui-popup.ui-body-inherit.ui-overlay-shadow.ui-corner-all .ui-footer.ui-bar-inherit, div#courseworkDescriptionEdit-popup .fullscreen-popup.ui-popup.ui-body-inherit.ui-overlay-shadow.ui-corner-all .ui-footer.ui-bar-inherit, div#courseworkGradeEdit-popup .fullscreen-popup.ui-popup.ui-body-inherit.ui-overlay-shadow.ui-corner-all .ui-footer.ui-bar-inherit, div#newCourseAdd-popup .fullscreen-popup.ui-popup.ui-body-inherit.ui-overlay-shadow.ui-corner-all .ui-footer.ui-bar-inherit {
+      border: 0 !important;
+      box-shadow: none !important; }
+    .mobile-pop-up .fullscreen-popup.ui-popup.ui-body-inherit.ui-overlay-shadow.ui-corner-all .save-btn, div#courseworkPointsEdit-popup .fullscreen-popup.ui-popup.ui-body-inherit.ui-overlay-shadow.ui-corner-all .save-btn, div#courseworkRatioEdit-popup .fullscreen-popup.ui-popup.ui-body-inherit.ui-overlay-shadow.ui-corner-all .save-btn, div#courseworkDescriptionEdit-popup .fullscreen-popup.ui-popup.ui-body-inherit.ui-overlay-shadow.ui-corner-all .save-btn, div#courseworkGradeEdit-popup .fullscreen-popup.ui-popup.ui-body-inherit.ui-overlay-shadow.ui-corner-all .save-btn, div#newCourseAdd-popup .fullscreen-popup.ui-popup.ui-body-inherit.ui-overlay-shadow.ui-corner-all .save-btn {
+      position: fixed;
+      bottom: 7px;
+      width: 63%;
+      border: 1px solid green;
+      display: block;
+      border-radius: 25px;
+      left: 14%;
+      color: white;
+      background: #bfd255;
+      /* Old browsers */
+      background: -moz-linear-gradient(top, #bfd255 0%, #8eb92a 50%, #72aa00 51%, #9ecb2d 100%);
+      /* FF3.6-15 */
+      background: -webkit-linear-gradient(top, #bfd255 0%, #8eb92a 50%, #72aa00 51%, #9ecb2d 100%);
+      /* Chrome10-25,Safari5.1-6 */
+      background: linear-gradient(to bottom, #bfd255 0%, #8eb92a 50%, #72aa00 51%, #9ecb2d 100%);
+      /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#bfd255', endColorstr='#9ecb2d',GradientType=0 );
+      /* IE6-9 */ }
+
+div#newCourseAdd-popup .ui-field-contain {
+  border-bottom: none; }
+
+.ui-input-text:after, .ui-input-search:after {
+  left: 0; }
+
+.ui-controlgroup-controls a.ui-shadow:not(:focus) {
+  text-align: left;
+  font-size: 14px; }
+  .ui-controlgroup-controls a.ui-shadow:not(:focus) i.fa {
+    margin-right: 10px; }
+
+.ui-controlgroup-vertical .ui-controlgroup-controls .ui-btn.ui-last-child {
+  border-bottom-width: 1px;
+  position: absolute;
+  width: 276px;
+  bottom: 13px; }
+
+div#navpanel h3.ui-title {
+  text-align: center; }
+
+.ui-slider-track.ui-mini {
+  height: 1px; }
+
+.ui-field-contain .ui-controlgroup {
+  text-align: center; }
+
+.ui-input-text.ui-body-inherit.ui-corner-all.ui-mini.ui-shadow-inset.ui-btn input {
+  width: 50vw !important; }
+
+.ui-navbar li:last-child .ui-btn {
+  font-size: 17px; }
+
+.ui-listview > li {
+  border-bottom: 1px solid #b7b7b7; }
+
+a.ui-btn.ui-btn-icon-right.ui-icon-carat-r {
+  font-weight: 400; }
+  a.ui-btn.ui-btn-icon-right.ui-icon-carat-r span.course-number {
+    font-weight: 600;
+    margin-right: 9px;
+    position: relative; }
+    a.ui-btn.ui-btn-icon-right.ui-icon-carat-r span.course-number:after {
+      content: ":";
+      position: absolute;
+      right: -6px; }
+
+.ui-slider-track .ui-btn.ui-slider-handle {
+  width: 13px;
+  height: 13px;
+  margin-top: -6px; }
+
+.course-details {
+  padding: 18px 0;
+  border-bottom: 2px solid #8bc34a;
+  background-color: white;
+  padding-top: 10px; }
+  .course-details i {
+    margin-right: 6px; }
+  .course-details #courseNumber {
+    font-weight: 700;
+    font-size: 19px; }
+  .course-details #courseTitle {
+    font-size: 19px; }
+
+.settings-heading, .settings-heading-desc {
+  display: inline-block;
+  border-bottom: 2px solid #d35400;
+  padding-bottom: 8px;
+  color: #2c3e50; }
+
+.settings-heading-desc {
+  margin-bottom: 0; }
+
+.ui-panel-inner {
+  top: 0;
+  padding: 0; }
+  .ui-panel-inner .nd2-sidepanel-profile {
+    height: 150px; }
+    .ui-panel-inner .nd2-sidepanel-profile .profile-thumbnail {
+      width: 93%;
+      height: 87px;
+      margin-left: 8px; }
+    .ui-panel-inner .nd2-sidepanel-profile .profile-text .subline {
+      font-size: 14px; }
+    .ui-panel-inner .nd2-sidepanel-profile .profile-background {
+      height: 100%; }
+    .ui-panel-inner .nd2-sidepanel-profile .row {
+      margin-top: 14%;
+      font-size: 24px; }
+
+.loginPanel {
+  position: absolute;
+  top: 40%;
+  left: 16%;
+  width: 68%; }
+  .loginPanel .input {
+    position: relative; }
+    .loginPanel .input .ui-input-text {
+      background-color: transparent;
+      border: 0;
+      background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
+      padding-left: 46px;
+      border-radius: 20px; }
+      .loginPanel .input .ui-input-text input {
+        text-shadow: none;
+        font-size: 17px;
+        font-weight: 100;
+        padding: 14px;
+        color: #f9f9f9;
+        /* FF 4-18 */
+        /* FF 19+ */
+        /* IE 10+ */ }
+        .loginPanel .input .ui-input-text input::-webkit-input-placeholder {
+          color: #c3c3c3; }
+        .loginPanel .input .ui-input-text input:focus::-webkit-input-placeholder {
+          color: transparent; }
+        .loginPanel .input .ui-input-text input:focus:-moz-placeholder {
+          color: transparent; }
+        .loginPanel .input .ui-input-text input:focus::-moz-placeholder {
+          color: transparent; }
+        .loginPanel .input .ui-input-text input:focus:-ms-input-placeholder {
+          color: transparent; }
+      .loginPanel .input .ui-input-text:after {
+        background-color: transparent; }
+    .loginPanel .input .fa {
+      position: absolute;
+      left: 0;
+      color: white;
+      font-size: 26px;
+      width: 45px;
+      padding-top: 9px;
+      text-align: center;
+      height: 39px;
+      background-color: rgba(0, 0, 0, 0.54);
+      border-top-left-radius: 20px;
+      border-bottom-left-radius: 20px;
+      padding-left: 6px; }
+  .loginPanel a.ui-btn.waves-effect.waves-button {
+    background-color: #F65C74 !important;
+    margin-top: 50px;
+    color: white;
+    border-radius: 25px; }
+
+.login-page {
+  height: calc(100vh);
+  -webkit-filter: blur(1px);
+  filter: blur(1px);
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  background: #606c88;
+  /* Old browsers */
+  background: -moz-radial-gradient(center, ellipse cover, #606c88 0%, #3f4c6b 100%);
+  /* FF3.6-15 */
+  background: -webkit-radial-gradient(center, ellipse cover, #606c88 0%, #3f4c6b 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: radial-gradient(ellipse at center, #606c88 0%, #3f4c6b 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#606c88', endColorstr='#3f4c6b',GradientType=1 );
+  /* IE6-9 fallback on horizontal gradient */ }
+
+.login {
+  padding: 0; }
+
+.login-header {
+  position: absolute;
+  top: 6%;
+  left: 20%;
+  width: 60%; }
+  .login-header h3 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 100;
+    font-size: 50px;
+    color: white;
+    text-align: center; }
+  .login-header .fa {
+    background: white;
+    border-radius: 50%;
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#9dd53a+0,a1d54f+50,80c217+51,7cbc0a+100;Green+Gloss+%231 */
+    background: #9dd53a;
+    /* Old browsers */
+    background: -moz-linear-gradient(top, #9dd53a 0%, #a1d54f 50%, #80c217 51%, #7cbc0a 100%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, #9dd53a 0%, #a1d54f 50%, #80c217 51%, #7cbc0a 100%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, #9dd53a 0%, #a1d54f 50%, #80c217 51%, #7cbc0a 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#9dd53a', endColorstr='#7cbc0a',GradientType=0 );
+    /* IE6-9 */
+    font-size: 58px;
+    padding: 5px; }
+
+thead {
+  background: aliceblue;
+  background: #9dd53a;
+  background: -moz-linear-gradient(top, #9dd53a 0%, #a1d54f 50%, #80c217 51%, #7cbc0a 100%);
+  background: -webkit-linear-gradient(top, #9dd53a 0%, #a1d54f 50%, #80c217 51%, #7cbc0a 100%);
+  background: linear-gradient(to bottom, #9dd53a 0%, #a1d54f 50%, #80c217 51%, #7cbc0a 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#9dd53a', endColorstr='#7cbc0a',GradientType=0 );
+  color: white; }
+
+#studentList li.student-details a.ui-btn {
+  padding-left: 111px;
+  padding-top: 0;
+  padding-bottom: 18px; }
+  #studentList li.student-details a.ui-btn img {
+    border-radius: 2px; }
+  #studentList li.student-details a.ui-btn h2 {
+    margin-top: 0; }
+
+.student-select, .performace {
+  border-bottom: transparent;
+  margin-bottom: 30px; }
+  .student-select label, .performace label {
+    font-size: 20px;
+    padding-bottom: 5px; }
+
+.result {
+  margin-top: 20%;
+  width: 100%;
+  text-align: center;
+  font-size: 21px;
+  text-decoration: underline; }
+
+#chart {
+  margin-top: 20%; }
+
+.invalid-login {
+  color: #ec8d83;
+  text-align: center;
+  margin-top: 40px; }
+
+/*# sourceMappingURL=app.css.map */

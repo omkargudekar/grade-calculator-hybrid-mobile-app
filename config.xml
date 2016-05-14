@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.phonegap.helloworld" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
+<widget id="com.gradecalc235.app" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
     <name>Hello World</name>
     <description>
-        Hello World sample application that responds to the deviceready event.
+        Grade Cal App
     </description>
-    <author email="support@phonegap.com" href="http://phonegap.com">
-        PhoneGap Team
+    <author email="omkargudekar@gmail.com" href="http://www.omkargudekar.com">
+    Omkar Gudekar
     </author>
     <content src="index.html" />
     <preference name="DisallowOverscroll" value="true" />
