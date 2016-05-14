@@ -4,7 +4,6 @@
     <title>Courses</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="http://www.getmyshop.org/jquery-mobile/jquery.mobile-1.4.5.min.css"/>
-    <link rel="stylesheet" href="css/app.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.2/css/font-awesome.min.css">
 
     <script src="http://www.getmyshop.org/jquery-mobile/jquery.js"></script>
@@ -21,7 +20,8 @@
     <link rel="stylesheet" href="vendor/waves/waves.min.css" />
     <link rel="stylesheet" href="vendor/wow/animate.css" />
     <link rel="stylesheet" href="css/nativedroid2.css" />
-    <link rel="stylesheet" href="css/nativedroid2.color.indigo.css" />
+    <link rel="stylesheet" href="css/nativedroid2.color.deep-purple.css" />
+    <link rel="stylesheet" href="css/app.css">
     <script src="vendor/waves/waves.min.js"></script>
     <script src="vendor/wow/wow.min.js"></script>
     <script src="js/nativedroid2.js"></script>
@@ -31,25 +31,8 @@
 <div id="home" data-role="page">
 
 
-    <div data-role="panel" id="navpanel" data-display="overlay" data-position-fixed="true">
-        <div data-role="header">
-            <h3>Menu</h3>
-        </div>
-        <div data-role="controlgroup" data-corners="false">
+    <nd2-include data-src="menu.html"></nd2-include>
 
-
-            <a onclick="window.location='courses.html'" data-role="button" class="left"><i class="fa fa-book" aria-hidden="true"></i>
-                Courses</a>
-            <a onclick="window.location='students.html'" data-role="button" class="left"><i class="fa fa-graduation-cap" aria-hidden="true"></i>
-                Students</a>
-            <a onclick="window.location='performance.html'" data-role="button" class="left"><i class="fa fa-line-chart" aria-hidden="true"></i>
-                Performance</a>
-            <a onclick="window.location='grade_courses.html'" data-role="button" class="left"><i class="fa fa-check-circle-o" aria-hidden="true"></i>
-                Grade</a>
-            <a onclick="window.location='login.html'" data-role="button" class="left"><i class="fa fa-sign-out" aria-hidden="true"></i>Logout</a>
-
-        </div>
-    </div>
 
 
     <div data-role="header" data-position="fixed">

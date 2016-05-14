@@ -17,14 +17,14 @@ div#courseworkPointsEdit-popup, div#courseworkRatioEdit-popup {
   left: 0; }
 
 .ui-controlgroup-controls a.ui-shadow:not(:focus) {
-  box-shadow: 0 2px 6px #A0A0A0;
-  margin-bottom: 6px;
+  margin-left: 10px;
+  text-align: left;
   font-size: 14px; }
 
 .ui-controlgroup-vertical .ui-controlgroup-controls .ui-btn.ui-last-child {
   border-bottom-width: 1px;
   position: absolute;
-  width: 239px;
+  width: 276px;
   bottom: 13px; }
 
 div#navpanel h3.ui-title {
@@ -55,5 +55,123 @@ a.ui-btn.ui-btn-icon-right.ui-icon-carat-r {
       content: ":";
       position: absolute;
       right: -6px; }
+
+.ui-slider-track .ui-btn.ui-slider-handle {
+  width: 13px;
+  height: 13px;
+  margin-top: -6px; }
+
+.course-details {
+  padding: 18px 0;
+  border-bottom: 2px solid #8bc34a;
+  background-color: white;
+  padding-top: 10px; }
+  .course-details i {
+    margin-right: 6px; }
+  .course-details #courseNumber {
+    font-weight: 700;
+    font-size: 19px; }
+  .course-details #courseTitle {
+    font-size: 19px; }
+
+.settings-heading, .settings-heading-desc {
+  display: inline-block;
+  border-bottom: 2px solid #d35400;
+  padding-bottom: 8px;
+  color: #2c3e50; }
+
+.settings-heading-desc {
+  margin-bottom: 0; }
+
+.ui-panel-inner {
+  top: 0;
+  padding: 0; }
+  .ui-panel-inner .nd2-sidepanel-profile {
+    height: 150px; }
+    .ui-panel-inner .nd2-sidepanel-profile .profile-thumbnail {
+      width: 93%;
+      height: 87px;
+      margin-left: 8px; }
+    .ui-panel-inner .nd2-sidepanel-profile .profile-text .subline {
+      font-size: 14px; }
+    .ui-panel-inner .nd2-sidepanel-profile .profile-background {
+      height: 100%; }
+    .ui-panel-inner .nd2-sidepanel-profile .row {
+      margin-top: 14%;
+      font-size: 24px; }
+
+.loginPanel {
+  position: absolute;
+  top: 40%;
+  left: 19%;
+  width: 60%; }
+  .loginPanel .input {
+    position: relative; }
+    .loginPanel .input .ui-input-text {
+      background-color: transparent;
+      border: 0;
+      background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
+      padding-left: 46px;
+      border-radius: 5px; }
+      .loginPanel .input .ui-input-text input {
+        text-shadow: none;
+        font-size: 17px;
+        font-weight: 100;
+        /* FF 4-18 */
+        /* FF 19+ */
+        /* IE 10+ */ }
+        .loginPanel .input .ui-input-text input::-webkit-input-placeholder {
+          color: #c3c3c3; }
+        .loginPanel .input .ui-input-text input:focus::-webkit-input-placeholder {
+          color: transparent; }
+        .loginPanel .input .ui-input-text input:focus:-moz-placeholder {
+          color: transparent; }
+        .loginPanel .input .ui-input-text input:focus::-moz-placeholder {
+          color: transparent; }
+        .loginPanel .input .ui-input-text input:focus:-ms-input-placeholder {
+          color: transparent; }
+      .loginPanel .input .ui-input-text:after {
+        background-color: transparent; }
+    .loginPanel .input .fa {
+      position: absolute;
+      left: 0;
+      color: white;
+      font-size: 23px;
+      width: 38px;
+      padding-top: 7px;
+      text-align: center;
+      height: 30px;
+      background-color: rgba(0, 0, 0, 0.54);
+      border-top-left-radius: 5px;
+      border-bottom-left-radius: 5px; }
+  .loginPanel a.ui-btn.waves-effect.waves-button {
+    background-color: #F65C74 !important;
+    margin-top: 50px;
+    color: white; }
+
+.login-page {
+  background-image: linear-gradient(rgba(86, 39, 137, 0.58), rgba(63, 120, 150, 0.79)), url("../img/sjsu.jpg");
+  height: calc(100vh);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 16% 100%;
+  -webkit-filter: blur(1px);
+  filter: blur(1px);
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0; }
+
+.login {
+  padding: 0; }
+
+.login-header {
+  position: absolute;
+  top: 6%;
+  left: 24%;
+  width: 60%; }
+  .login-header h3 {
+    font-size: 50px;
+    text-shadow: 0px 3px 13px #292929; }
 
 /*# sourceMappingURL=app.css.map */
